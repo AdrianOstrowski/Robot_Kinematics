@@ -1,5 +1,5 @@
 C:\GitHub\Robot_Kinematics\x64\Debug\Robot_Kinematics.vcxproj.AssemblyReference.cache
 C:\GitHub\Robot_Kinematics\x64\Debug\Robot_Kinematics.vcxproj.SuggestedBindingRedirects.cache
-C:\GitHub\Robot_Kinematics\x64\Debug\Robot_Kinematics.exe
 C:\GitHub\Robot_Kinematics\x64\Debug\RobotKinematics.MyForm.resources
 C:\GitHub\Robot_Kinematics\x64\Debug\Robot_Kinematics.vcxproj.GenerateResource.cache
+C:\GitHub\Robot_Kinematics\x64\Debug\Robot_Kinematics.exe

@@ -87,6 +87,25 @@ namespace RobotKinematics {
 	private: System::Windows::Forms::Label^ label22;
 	private: System::Windows::Forms::TextBox^ textBox20;
 	private: System::Windows::Forms::GroupBox^ groupBox3;
+	private: System::Windows::Forms::Label^ label32;
+	private: System::Windows::Forms::Label^ label30;
+	private: System::Windows::Forms::Label^ label31;
+	private: System::Windows::Forms::TextBox^ textBox27;
+	private: System::Windows::Forms::TextBox^ textBox28;
+	private: System::Windows::Forms::TextBox^ textBox24;
+	private: System::Windows::Forms::Label^ label27;
+	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::TextBox^ textBox25;
+	private: System::Windows::Forms::TextBox^ textBox26;
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::TextBox^ textBox21;
+	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::Label^ label25;
+	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::TextBox^ textBox22;
+	private: System::Windows::Forms::TextBox^ textBox23;
+	private: System::Windows::Forms::Label^ label33;
 	public protected:
 
 
@@ -152,6 +171,8 @@ namespace RobotKinematics {
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
@@ -166,15 +187,33 @@ namespace RobotKinematics {
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
-			this->label22 = (gcnew System::Windows::Forms::Label());
-			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox28 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox23 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->BeginInit();
 			this->groupBox2->SuspendLayout();
+			this->groupBox3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -183,7 +222,7 @@ namespace RobotKinematics {
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button1->Location = System::Drawing::Point(286, 329);
+			this->button1->Location = System::Drawing::Point(272, 374);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(128, 68);
 			this->button1->TabIndex = 0;
@@ -312,7 +351,7 @@ namespace RobotKinematics {
 			// 
 			chartArea1->Name = L"ChartArea1";
 			this->View->ChartAreas->Add(chartArea1);
-			this->View->Location = System::Drawing::Point(487, 255);
+			this->View->Location = System::Drawing::Point(420, 263);
 			this->View->Name = L"View";
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
@@ -329,6 +368,7 @@ namespace RobotKinematics {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(43, 20);
 			this->textBox1->TabIndex = 16;
+			this->textBox1->Text = L"1";
 			// 
 			// textBox2
 			// 
@@ -455,7 +495,7 @@ namespace RobotKinematics {
 			// 
 			chartArea2->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea2);
-			this->chart1->Location = System::Drawing::Point(781, 255);
+			this->chart1->Location = System::Drawing::Point(714, 263);
 			this->chart1->Name = L"chart1";
 			series2->ChartArea = L"ChartArea1";
 			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
@@ -470,7 +510,7 @@ namespace RobotKinematics {
 			// 
 			chartArea3->Name = L"ChartArea1";
 			this->chart2->ChartAreas->Add(chartArea3);
-			this->chart2->Location = System::Drawing::Point(781, 12);
+			this->chart2->Location = System::Drawing::Point(714, 20);
 			this->chart2->Name = L"chart2";
 			series3->ChartArea = L"ChartArea1";
 			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
@@ -485,7 +525,7 @@ namespace RobotKinematics {
 			// 
 			chartArea4->Name = L"ChartArea1";
 			this->chart3->ChartAreas->Add(chartArea4);
-			this->chart3->Location = System::Drawing::Point(487, 12);
+			this->chart3->Location = System::Drawing::Point(420, 20);
 			this->chart3->Name = L"chart3";
 			series4->ChartArea = L"ChartArea1";
 			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
@@ -516,12 +556,28 @@ namespace RobotKinematics {
 			this->groupBox2->Controls->Add(this->textBox16);
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox2->Location = System::Drawing::Point(272, 13);
+			this->groupBox2->Location = System::Drawing::Point(258, 12);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(142, 310);
 			this->groupBox2->TabIndex = 33;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Trajectory";
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Location = System::Drawing::Point(24, 250);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(91, 13);
+			this->label22->TabIndex = 35;
+			this->label22->Text = L"Points of move";
+			// 
+			// textBox20
+			// 
+			this->textBox20->Location = System::Drawing::Point(27, 266);
+			this->textBox20->Name = L"textBox20";
+			this->textBox20->Size = System::Drawing::Size(86, 20);
+			this->textBox20->TabIndex = 36;
 			// 
 			// label21
 			// 
@@ -540,7 +596,6 @@ namespace RobotKinematics {
 			this->label20->Size = System::Drawing::Size(33, 13);
 			this->label20->TabIndex = 33;
 			this->label20->Text = L"End:";
-			this->label20->Click += gcnew System::EventHandler(this, &MyForm::label20_Click);
 			// 
 			// textBox17
 			// 
@@ -638,24 +693,27 @@ namespace RobotKinematics {
 			this->textBox16->Size = System::Drawing::Size(43, 20);
 			this->textBox16->TabIndex = 25;
 			// 
-			// label22
-			// 
-			this->label22->AutoSize = true;
-			this->label22->Location = System::Drawing::Point(24, 250);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(91, 13);
-			this->label22->TabIndex = 35;
-			this->label22->Text = L"Points of move";
-			// 
-			// textBox20
-			// 
-			this->textBox20->Location = System::Drawing::Point(27, 266);
-			this->textBox20->Name = L"textBox20";
-			this->textBox20->Size = System::Drawing::Size(86, 20);
-			this->textBox20->TabIndex = 36;
-			// 
 			// groupBox3
 			// 
+			this->groupBox3->Controls->Add(this->label33);
+			this->groupBox3->Controls->Add(this->label32);
+			this->groupBox3->Controls->Add(this->label30);
+			this->groupBox3->Controls->Add(this->label31);
+			this->groupBox3->Controls->Add(this->textBox27);
+			this->groupBox3->Controls->Add(this->textBox28);
+			this->groupBox3->Controls->Add(this->textBox24);
+			this->groupBox3->Controls->Add(this->label27);
+			this->groupBox3->Controls->Add(this->label28);
+			this->groupBox3->Controls->Add(this->label29);
+			this->groupBox3->Controls->Add(this->textBox25);
+			this->groupBox3->Controls->Add(this->textBox26);
+			this->groupBox3->Controls->Add(this->label23);
+			this->groupBox3->Controls->Add(this->textBox21);
+			this->groupBox3->Controls->Add(this->label24);
+			this->groupBox3->Controls->Add(this->label25);
+			this->groupBox3->Controls->Add(this->label26);
+			this->groupBox3->Controls->Add(this->textBox22);
+			this->groupBox3->Controls->Add(this->textBox23);
 			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->groupBox3->Location = System::Drawing::Point(12, 299);
@@ -665,11 +723,166 @@ namespace RobotKinematics {
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Results";
 			// 
+			// label33
+			// 
+			this->label33->AutoSize = true;
+			this->label33->Location = System::Drawing::Point(12, 157);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(36, 13);
+			this->label33->TabIndex = 53;
+			this->label33->Text = L"φ5[*]";
+			// 
+			// label32
+			// 
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(6, 33);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(126, 13);
+			this->label32->TabIndex = 52;
+			this->label32->Text = L"Machine Coordinates";
+			// 
+			// label30
+			// 
+			this->label30->AutoSize = true;
+			this->label30->Location = System::Drawing::Point(12, 131);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(36, 13);
+			this->label30->TabIndex = 48;
+			this->label30->Text = L"φ4[*]";
+			// 
+			// label31
+			// 
+			this->label31->AutoSize = true;
+			this->label31->Location = System::Drawing::Point(12, 157);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(11, 13);
+			this->label31->TabIndex = 49;
+			this->label31->Text = L" ";
+			// 
+			// textBox27
+			// 
+			this->textBox27->Location = System::Drawing::Point(60, 128);
+			this->textBox27->Name = L"textBox27";
+			this->textBox27->Size = System::Drawing::Size(43, 20);
+			this->textBox27->TabIndex = 51;
+			// 
+			// textBox28
+			// 
+			this->textBox28->Location = System::Drawing::Point(60, 154);
+			this->textBox28->Name = L"textBox28";
+			this->textBox28->Size = System::Drawing::Size(43, 20);
+			this->textBox28->TabIndex = 50;
+			// 
+			// textBox24
+			// 
+			this->textBox24->Location = System::Drawing::Point(60, 49);
+			this->textBox24->Name = L"textBox24";
+			this->textBox24->Size = System::Drawing::Size(43, 20);
+			this->textBox24->TabIndex = 45;
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Location = System::Drawing::Point(13, 56);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(36, 13);
+			this->label27->TabIndex = 42;
+			this->label27->Text = L"φ1[*]";
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(12, 79);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(36, 13);
+			this->label28->TabIndex = 43;
+			this->label28->Text = L"φ2[*]";
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(12, 105);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(36, 13);
+			this->label29->TabIndex = 44;
+			this->label29->Text = L"φ3[*]";
+			// 
+			// textBox25
+			// 
+			this->textBox25->Location = System::Drawing::Point(60, 76);
+			this->textBox25->Name = L"textBox25";
+			this->textBox25->Size = System::Drawing::Size(43, 20);
+			this->textBox25->TabIndex = 47;
+			// 
+			// textBox26
+			// 
+			this->textBox26->Location = System::Drawing::Point(60, 102);
+			this->textBox26->Name = L"textBox26";
+			this->textBox26->Size = System::Drawing::Size(43, 20);
+			this->textBox26->TabIndex = 46;
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Location = System::Drawing::Point(157, 56);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(31, 13);
+			this->label23->TabIndex = 41;
+			this->label23->Text = L"TCP";
+			// 
+			// textBox21
+			// 
+			this->textBox21->Location = System::Drawing::Point(179, 75);
+			this->textBox21->Name = L"textBox21";
+			this->textBox21->Size = System::Drawing::Size(43, 20);
+			this->textBox21->TabIndex = 38;
+			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(132, 82);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(47, 13);
+			this->label24->TabIndex = 35;
+			this->label24->Text = L"xT[mm]";
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(131, 105);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(47, 13);
+			this->label25->TabIndex = 36;
+			this->label25->Text = L"yT[mm]";
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Location = System::Drawing::Point(131, 131);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(47, 13);
+			this->label26->TabIndex = 37;
+			this->label26->Text = L"zT[mm]";
+			// 
+			// textBox22
+			// 
+			this->textBox22->Location = System::Drawing::Point(179, 102);
+			this->textBox22->Name = L"textBox22";
+			this->textBox22->Size = System::Drawing::Size(43, 20);
+			this->textBox22->TabIndex = 40;
+			// 
+			// textBox23
+			// 
+			this->textBox23->Location = System::Drawing::Point(179, 128);
+			this->textBox23->Name = L"textBox23";
+			this->textBox23->Size = System::Drawing::Size(43, 20);
+			this->textBox23->TabIndex = 39;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1080, 507);
+			this->ClientSize = System::Drawing::Size(1010, 507);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->chart3);
@@ -688,6 +901,8 @@ namespace RobotKinematics {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox3->PerformLayout();
 			this->ResumeLayout(false);
 
 		}

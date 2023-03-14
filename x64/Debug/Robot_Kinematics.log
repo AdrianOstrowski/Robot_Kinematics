@@ -1,4 +1,20 @@
 ﻿  MyForm.cpp
+C:\GitHub\Robot_Kinematics\MyForm.h(1050,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1051,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1054,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1055,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1056,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1058,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1059,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1062,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1063,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1064,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1066,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1067,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1068,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1070,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1071,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\GitHub\Robot_Kinematics\MyForm.h(1072,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 C:\GitHub\Robot_Kinematics\MyForm.cpp(6,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Robot_Kinematics.vcxproj -> C:\GitHub\Robot_Kinematics\x64\Debug\Robot_Kinematics.exe

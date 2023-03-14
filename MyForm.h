@@ -1,6 +1,13 @@
 ﻿#pragma once
 #include <string>
 #include <msclr\marshal_cppstd.h>
+#include <numeric>
+#include <algorithm>
+#include <vector>
+#include <cmath>
+
+#define M_PI 3.14159265358979323846
+
 namespace RobotKinematics {
 
 	using namespace System;
@@ -23,7 +30,7 @@ namespace RobotKinematics {
 			//TODO: Add the constructor code here
 			//
 		}
-		double to_int(String^ tekst)
+		double to_double(String^ tekst)
 		{
 			std::string unmanaged = msclr::interop::marshal_as<std::string>(tekst);
 			double  managed = std::stod(unmanaged);
@@ -71,7 +78,7 @@ namespace RobotKinematics {
 	private: System::Windows::Forms::TextBox^ L4;
 	private: System::Windows::Forms::TextBox^ L5;
 	private: System::Windows::Forms::TextBox^ L6;
-	private: System::Windows::Forms::TextBox^ omega;
+
 	private: System::Windows::Forms::TextBox^ fi;
 	private: System::Windows::Forms::TextBox^ gamma1;
 	private: System::Windows::Forms::TextBox^ gamma2;
@@ -142,6 +149,7 @@ private: System::Windows::Forms::TextBox^ zT;
 
 
 	private: System::Windows::Forms::Label^ label33;
+private: System::Windows::Forms::TextBox^ teta;
 	public protected:
 
 
@@ -166,14 +174,19 @@ private: System::Windows::Forms::TextBox^ zT;
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea5 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea6 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea7 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea8 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -197,12 +210,12 @@ private: System::Windows::Forms::TextBox^ zT;
 			this->L4 = (gcnew System::Windows::Forms::TextBox());
 			this->L5 = (gcnew System::Windows::Forms::TextBox());
 			this->L6 = (gcnew System::Windows::Forms::TextBox());
-			this->omega = (gcnew System::Windows::Forms::TextBox());
 			this->fi = (gcnew System::Windows::Forms::TextBox());
 			this->gamma1 = (gcnew System::Windows::Forms::TextBox());
 			this->gamma2 = (gcnew System::Windows::Forms::TextBox());
 			this->gamma3 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->teta = (gcnew System::Windows::Forms::TextBox());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
@@ -258,7 +271,7 @@ private: System::Windows::Forms::TextBox^ zT;
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button1->Location = System::Drawing::Point(272, 374);
+			this->button1->Location = System::Drawing::Point(272, 348);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(128, 68);
 			this->button1->TabIndex = 0;
@@ -296,7 +309,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(14, 135);
+			this->label5->Location = System::Drawing::Point(15, 113);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(40, 13);
 			this->label5->TabIndex = 5;
@@ -305,7 +318,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(130, 135);
+			this->label6->Location = System::Drawing::Point(15, 138);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(40, 13);
 			this->label6->TabIndex = 6;
@@ -341,7 +354,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(130, 186);
+			this->label10->Location = System::Drawing::Point(144, 113);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(27, 13);
 			this->label10->TabIndex = 10;
@@ -350,7 +363,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(130, 212);
+			this->label11->Location = System::Drawing::Point(142, 139);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(29, 13);
 			this->label11->TabIndex = 11;
@@ -359,7 +372,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(12, 186);
+			this->label12->Location = System::Drawing::Point(26, 188);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(53, 13);
 			this->label12->TabIndex = 12;
@@ -368,7 +381,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(13, 212);
+			this->label13->Location = System::Drawing::Point(93, 188);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(53, 13);
 			this->label13->TabIndex = 13;
@@ -377,7 +390,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(13, 236);
+			this->label14->Location = System::Drawing::Point(156, 188);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(53, 13);
 			this->label14->TabIndex = 14;
@@ -385,15 +398,15 @@ private: System::Windows::Forms::TextBox^ zT;
 			// 
 			// View
 			// 
-			chartArea5->Name = L"ChartArea1";
-			this->View->ChartAreas->Add(chartArea5);
+			chartArea1->Name = L"ChartArea1";
+			this->View->ChartAreas->Add(chartArea1);
 			this->View->Location = System::Drawing::Point(420, 263);
 			this->View->Name = L"View";
-			series5->ChartArea = L"ChartArea1";
-			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series5->Name = L"Series1";
-			series5->YValuesPerPoint = 4;
-			this->View->Series->Add(series5);
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series1->Name = L"Series1";
+			series1->YValuesPerPoint = 4;
+			this->View->Series->Add(series1);
 			this->View->Size = System::Drawing::Size(288, 237);
 			this->View->TabIndex = 15;
 			this->View->Text = L"chart1";
@@ -408,7 +421,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// 
 			// e
 			// 
-			this->e->Location = System::Drawing::Point(177, 132);
+			this->e->Location = System::Drawing::Point(61, 136);
 			this->e->Name = L"e";
 			this->e->Size = System::Drawing::Size(43, 20);
 			this->e->TabIndex = 17;
@@ -416,7 +429,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// 
 			// d
 			// 
-			this->d->Location = System::Drawing::Point(61, 132);
+			this->d->Location = System::Drawing::Point(61, 110);
 			this->d->Name = L"d";
 			this->d->Size = System::Drawing::Size(43, 20);
 			this->d->TabIndex = 18;
@@ -462,17 +475,9 @@ private: System::Windows::Forms::TextBox^ zT;
 			this->L6->TabIndex = 23;
 			this->L6->Text = L"300";
 			// 
-			// omega
-			// 
-			this->omega->Location = System::Drawing::Point(177, 183);
-			this->omega->Name = L"omega";
-			this->omega->Size = System::Drawing::Size(43, 20);
-			this->omega->TabIndex = 24;
-			this->omega->Text = L"30";
-			// 
 			// fi
 			// 
-			this->fi->Location = System::Drawing::Point(177, 209);
+			this->fi->Location = System::Drawing::Point(177, 136);
 			this->fi->Name = L"fi";
 			this->fi->Size = System::Drawing::Size(43, 20);
 			this->fi->TabIndex = 25;
@@ -480,7 +485,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// 
 			// gamma1
 			// 
-			this->gamma1->Location = System::Drawing::Point(60, 182);
+			this->gamma1->Location = System::Drawing::Point(29, 204);
 			this->gamma1->Name = L"gamma1";
 			this->gamma1->Size = System::Drawing::Size(43, 20);
 			this->gamma1->TabIndex = 26;
@@ -488,7 +493,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// 
 			// gamma2
 			// 
-			this->gamma2->Location = System::Drawing::Point(61, 209);
+			this->gamma2->Location = System::Drawing::Point(96, 204);
 			this->gamma2->Name = L"gamma2";
 			this->gamma2->Size = System::Drawing::Size(43, 20);
 			this->gamma2->TabIndex = 27;
@@ -496,7 +501,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// 
 			// gamma3
 			// 
-			this->gamma3->Location = System::Drawing::Point(61, 233);
+			this->gamma3->Location = System::Drawing::Point(161, 204);
 			this->gamma3->Name = L"gamma3";
 			this->gamma3->Size = System::Drawing::Size(43, 20);
 			this->gamma3->TabIndex = 28;
@@ -504,6 +509,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->teta);
 			this->groupBox1->Controls->Add(this->L1);
 			this->groupBox1->Controls->Add(this->gamma3);
 			this->groupBox1->Controls->Add(this->label2);
@@ -513,7 +519,6 @@ private: System::Windows::Forms::TextBox^ zT;
 			this->groupBox1->Controls->Add(this->label4);
 			this->groupBox1->Controls->Add(this->fi);
 			this->groupBox1->Controls->Add(this->label5);
-			this->groupBox1->Controls->Add(this->omega);
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->L6);
 			this->groupBox1->Controls->Add(this->label7);
@@ -539,47 +544,75 @@ private: System::Windows::Forms::TextBox^ zT;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Parameters";
 			// 
+			// teta
+			// 
+			this->teta->Location = System::Drawing::Point(177, 109);
+			this->teta->Name = L"teta";
+			this->teta->Size = System::Drawing::Size(43, 20);
+			this->teta->TabIndex = 29;
+			this->teta->Text = L"60";
+			// 
 			// chart1
 			// 
-			chartArea6->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea6);
+			chartArea2->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea2);
 			this->chart1->Location = System::Drawing::Point(714, 263);
 			this->chart1->Name = L"chart1";
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series2->Name = L"Series1";
+			series2->YValuesPerPoint = 4;
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series3->Name = L"Series2";
+			series4->ChartArea = L"ChartArea1";
+			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series4->Name = L"Series3";
+			series5->ChartArea = L"ChartArea1";
+			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series5->Name = L"Series4";
 			series6->ChartArea = L"ChartArea1";
 			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series6->Name = L"Series1";
-			series6->YValuesPerPoint = 4;
+			series6->Name = L"Series5";
+			series7->ChartArea = L"ChartArea1";
+			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series7->Name = L"Series6";
+			this->chart1->Series->Add(series2);
+			this->chart1->Series->Add(series3);
+			this->chart1->Series->Add(series4);
+			this->chart1->Series->Add(series5);
 			this->chart1->Series->Add(series6);
+			this->chart1->Series->Add(series7);
 			this->chart1->Size = System::Drawing::Size(288, 237);
 			this->chart1->TabIndex = 30;
 			this->chart1->Text = L"chart1";
 			// 
 			// chart2
 			// 
-			chartArea7->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea7);
+			chartArea3->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea3);
 			this->chart2->Location = System::Drawing::Point(714, 20);
 			this->chart2->Name = L"chart2";
-			series7->ChartArea = L"ChartArea1";
-			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series7->Name = L"Series1";
-			series7->YValuesPerPoint = 4;
-			this->chart2->Series->Add(series7);
+			series8->ChartArea = L"ChartArea1";
+			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series8->Name = L"Series1";
+			series8->YValuesPerPoint = 4;
+			this->chart2->Series->Add(series8);
 			this->chart2->Size = System::Drawing::Size(288, 237);
 			this->chart2->TabIndex = 31;
 			this->chart2->Text = L"chart1";
 			// 
 			// chart3
 			// 
-			chartArea8->Name = L"ChartArea1";
-			this->chart3->ChartAreas->Add(chartArea8);
+			chartArea4->Name = L"ChartArea1";
+			this->chart3->ChartAreas->Add(chartArea4);
 			this->chart3->Location = System::Drawing::Point(420, 20);
 			this->chart3->Name = L"chart3";
-			series8->ChartArea = L"ChartArea1";
-			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series8->Name = L"Series1";
-			series8->YValuesPerPoint = 4;
-			this->chart3->Series->Add(series8);
+			series9->ChartArea = L"ChartArea1";
+			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series9->Name = L"Series1";
+			series9->YValuesPerPoint = 4;
+			this->chart3->Series->Add(series9);
 			this->chart3->Size = System::Drawing::Size(288, 237);
 			this->chart3->TabIndex = 32;
 			this->chart3->Text = L"chart1";
@@ -947,7 +980,7 @@ private: System::Windows::Forms::TextBox^ zT;
 			this->Controls->Add(this->View);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L" ";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -963,26 +996,112 @@ private: System::Windows::Forms::TextBox^ zT;
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		int L1 = to_int(this->L1->Text);
-		int L2 = to_int(this->L2->Text);
-		int L3 = to_int(this->L3->Text);
-		int L4 = to_int(this->L4->Text);
-		int L5 = to_int(this->L5->Text);
-		int L6 = to_int(this->L6->Text);
-		int e = to_int(this->e->Text);
-		int d = to_int(this->d->Text);
-		int omega = to_int(this->omega->Text);
-		int fi = to_int(this->fi->Text);
-		int gamma1 = to_int(this->gamma1->Text);
-		int gamma2 = to_int(this->gamma2->Text);
-		int gamma3 = to_int(this->gamma3->Text);
-		int x_start = to_int(this->x_start->Text);
-		int y_start = to_int(this->y_start->Text);
-		int z_start = to_int(this->z_start->Text);
-		int x_end = to_int(this->x_end->Text);
-		int y_end = to_int(this->y_end->Text);
-		int z_end = to_int(this->z_end->Text);
-		int steps = to_int(this->steps->Text);
+		double L1 = to_double(this->L1->Text);
+		double L2 = to_double(this->L2->Text);
+		double L3 = to_double(this->L3->Text);
+		double L4 = to_double(this->L4->Text);
+		double L5 = to_double(this->L5->Text);
+		double L6 = to_double(this->L6->Text);
+		double d = to_double(this->d->Text);
+		double ee = to_double(this->e->Text);
+		double teta = to_double(this->teta->Text);
+		double fi = to_double(this->fi->Text);
+		double gamma1 = to_double(this->gamma1->Text);
+		double gamma2 = to_double(this->gamma2->Text);
+		double gamma3 = to_double(this->gamma3->Text);
+		double x_start = to_double(this->x_start->Text);
+		double y_start = to_double(this->y_start->Text);
+		double z_start = to_double(this->z_start->Text);
+		double x_end = to_double(this->x_end->Text);
+		double y_end = to_double(this->y_end->Text);
+		double z_end = to_double(this->z_end->Text);
+		double steps = to_double(this->steps->Text);
+		double L = L5 + L6;
+		//alpha1
+		double angle1 = 45;
+		double alpha1 = angle1 * M_PI / 180.0; // konwersja kąta na radiany
+		//alpha2
+		double angle2 = 45;
+		double alpha2 = angle2 * M_PI / 180.0; // konwersja kąta na radiany
+		//alpha3
+		double angle3 = 45;
+		double alpha3 = angle3 * M_PI / 180.0; // konwersja kąta na radiany
+		//alpha4
+		double angle4 = 45;
+		double alpha4 = angle4 * M_PI / 180.0; // konwersja kąta na radiany
+		//sin and cos
+		double cos_value_teta = std::cos(teta); // obliczenie cosinusa
+		double sin_value_teta = std::sin(teta); // obliczenie sinusa
+		double cos_value_fi = std::cos(fi); // obliczenie cosinusa
+		double sin_value_fi = std::sin(fi); // obliczenie sinusa
+		double cos_value1 = std::cos(alpha1); // obliczenie cosinusa
+		double sin_value1 = std::sin(alpha1); // obliczenie sinusa
+		double cos_value2 = std::cos(alpha2); // obliczenie cosinusa
+		double sin_value2 = std::sin(alpha2); // obliczenie sinusa
+		double cos_value23 = std::cos(alpha2 + alpha3); // obliczenie cosinusa
+		double sin_value23 = std::sin(alpha2 + alpha3); // obliczenie sinusa
+		double cos_value234 = std::cos(alpha2 + alpha3 + alpha4); // obliczenie cosinusa
+		double sin_value234 = std::sin(alpha2 + alpha3 + alpha4); // obliczenie sinusa
+		//Punkt0
+		int x0 = 0;
+		int y0 = 0;
+		int z0 = 0;
+		//Punkt1
+		int x1 = L1 * cos_value1;
+		int y1 = L1 * sin_value1;
+		int z1 = 0;
+		//Punkt2
+		int x2 = x1 + d * sin_value1;
+		int y2 = y1 - d * cos_value1;
+		int z2 = L2 * sin_value2;
+		//Punkt3
+		int x3 = x2 - (d - ee) * sin_value1;
+		int y3 = y2 + (d - ee) * cos_value1;
+		int z3 = z2;
+		//Punkt4
+		int x4 = x3 + L3 * cos_value1 * cos_value23;
+		int y4 = y3 + L3 * sin_value1 * cos_value23;
+		int z4 = z3 + L3 * sin_value23;
+		//Punkt5
+		int x5 = x4 + L4 * cos_value1 * cos_value234 ;
+		int y5 = y4 + L4 * sin_value1 * cos_value234;
+		int z5 = z4 + L4 * sin_value234;
+		//Punkt6 
+		int xT = x5 + L * cos_value_teta * cos_value_fi;
+		int yT = y5 + L * cos_value_teta * sin_value_fi;
+		int zT = z5 + L * sin_value_teta;
+		// ustaw zakre osi
+		chart1->ChartAreas[0]->AxisX->Title = "X";
+		chart1->ChartAreas[0]->AxisY->Title = "Y";
+		chart1->ChartAreas[0]->AxisX->Minimum = -1000;
+		chart1->ChartAreas[0]->AxisX->Maximum = 1000;
+		chart1->ChartAreas[0]->AxisY->Minimum = -1000;
+		chart1->ChartAreas[0]->AxisY->Maximum = 1000;
+		chart1->ChartAreas[0]->AxisX->Interval = 100;
+		chart1->ChartAreas[0]->AxisY->Interval = 100;
+
+		// ustaw marginesy wyświetlania
+		chart1->ChartAreas[0]->InnerPlotPosition->Auto = false;
+		chart1->ChartAreas[0]->InnerPlotPosition->Width = 80;
+		chart1->ChartAreas[0]->InnerPlotPosition->Height = 80;
+		chart1->ChartAreas[0]->InnerPlotPosition->X = 10;
+		chart1->ChartAreas[0]->InnerPlotPosition->Y = 10;
+
+		// usuń siatkę
+		chart1->ChartAreas[0]->AxisX->MajorGrid->Enabled = false;
+		chart1->ChartAreas[0]->AxisY->MajorGrid->Enabled = false;
+		chart1->Series["Series1"]->Points->AddXY(x0, y0);
+		chart1->Series["Series1"]->Points->AddXY(x1, y1);
+		chart1->Series["Series2"]->Points->AddXY(x1, y1);
+		chart1->Series["Series2"]->Points->AddXY(x2, y2);
+		chart1->Series["Series3"]->Points->AddXY(x2, y2);
+		chart1->Series["Series3"]->Points->AddXY(x3, y3);
+		chart1->Series["Series4"]->Points->AddXY(x3, y3);
+		chart1->Series["Series4"]->Points->AddXY(x4, y4);
+		chart1->Series["Series5"]->Points->AddXY(x4, y4);
+		chart1->Series["Series5"]->Points->AddXY(x5, y5);
+		chart1->Series["Series6"]->Points->AddXY(x5, y5);
+		chart1->Series["Series6"]->Points->AddXY(xT, yT);
 	}
 };
-}
+};

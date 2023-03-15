@@ -63,7 +63,9 @@ namespace RobotKinematics {
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ label14;
-	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ View;
+	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart3;
+	private:
+
 	private: System::Windows::Forms::TextBox^ L1;
 	private: System::Windows::Forms::TextBox^ e;
 	public protected:
@@ -84,19 +86,12 @@ namespace RobotKinematics {
 	private: System::Windows::Forms::TextBox^ gamma2;
 	private: System::Windows::Forms::TextBox^ gamma3;
 
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 	private:
 	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart2;
-	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart3;
+	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
+
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Label^ label21;
 	private: System::Windows::Forms::Label^ label20;
@@ -176,17 +171,30 @@ private: System::Windows::Forms::TextBox^ teta;
 		{
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series13 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series14 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series15 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series16 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series17 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series18 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series19 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series20 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series21 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series22 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -201,7 +209,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->View = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->chart3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->L1 = (gcnew System::Windows::Forms::TextBox());
 			this->e = (gcnew System::Windows::Forms::TextBox());
 			this->d = (gcnew System::Windows::Forms::TextBox());
@@ -218,7 +226,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->teta = (gcnew System::Windows::Forms::TextBox());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->chart3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->chart4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->steps = (gcnew System::Windows::Forms::TextBox());
@@ -256,11 +264,11 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->yT = (gcnew System::Windows::Forms::TextBox());
 			this->zT = (gcnew System::Windows::Forms::TextBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart4))->BeginInit();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->SuspendLayout();
@@ -271,7 +279,7 @@ private: System::Windows::Forms::TextBox^ teta;
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button1->Location = System::Drawing::Point(272, 348);
+			this->button1->Location = System::Drawing::Point(272, 428);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(128, 68);
 			this->button1->TabIndex = 0;
@@ -396,20 +404,46 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->label14->TabIndex = 14;
 			this->label14->Text = L"δ3[1/-1]";
 			// 
-			// View
+			// chart3
 			// 
 			chartArea1->Name = L"ChartArea1";
-			this->View->ChartAreas->Add(chartArea1);
-			this->View->Location = System::Drawing::Point(420, 263);
-			this->View->Name = L"View";
+			this->chart3->ChartAreas->Add(chartArea1);
+			this->chart3->Location = System::Drawing::Point(433, 332);
+			this->chart3->Margin = System::Windows::Forms::Padding(2);
+			this->chart3->Name = L"chart3";
+			this->chart3->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
 			series1->Name = L"Series1";
 			series1->YValuesPerPoint = 4;
-			this->View->Series->Add(series1);
-			this->View->Size = System::Drawing::Size(288, 237);
-			this->View->TabIndex = 15;
-			this->View->Text = L"chart1";
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series2->Name = L"Series2";
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series3->Name = L"Series3";
+			series4->ChartArea = L"ChartArea1";
+			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series4->Name = L"Series4";
+			series5->ChartArea = L"ChartArea1";
+			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series5->Name = L"Series5";
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series6->Name = L"Series6";
+			series7->ChartArea = L"ChartArea1";
+			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series7->Name = L"Series7";
+			this->chart3->Series->Add(series1);
+			this->chart3->Series->Add(series2);
+			this->chart3->Series->Add(series3);
+			this->chart3->Series->Add(series4);
+			this->chart3->Series->Add(series5);
+			this->chart3->Series->Add(series6);
+			this->chart3->Series->Add(series7);
+			this->chart3->Size = System::Drawing::Size(355, 295);
+			this->chart3->TabIndex = 15;
+			this->chart3->Text = L"chart1";
 			// 
 			// L1
 			// 
@@ -417,7 +451,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L1->Name = L"L1";
 			this->L1->Size = System::Drawing::Size(43, 20);
 			this->L1->TabIndex = 16;
-			this->L1->Text = L"1000";
+			this->L1->Text = L"700";
 			// 
 			// e
 			// 
@@ -425,7 +459,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->e->Name = L"e";
 			this->e->Size = System::Drawing::Size(43, 20);
 			this->e->TabIndex = 17;
-			this->e->Text = L"5";
+			this->e->Text = L"10";
 			// 
 			// d
 			// 
@@ -433,7 +467,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->d->Name = L"d";
 			this->d->Size = System::Drawing::Size(43, 20);
 			this->d->TabIndex = 18;
-			this->d->Text = L"10";
+			this->d->Text = L"5";
 			// 
 			// L3
 			// 
@@ -441,7 +475,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L3->Name = L"L3";
 			this->L3->Size = System::Drawing::Size(43, 20);
 			this->L3->TabIndex = 19;
-			this->L3->Text = L"600";
+			this->L3->Text = L"500";
 			// 
 			// L2
 			// 
@@ -449,7 +483,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L2->Name = L"L2";
 			this->L2->Size = System::Drawing::Size(43, 20);
 			this->L2->TabIndex = 20;
-			this->L2->Text = L"800";
+			this->L2->Text = L"400";
 			// 
 			// L4
 			// 
@@ -457,7 +491,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L4->Name = L"L4";
 			this->L4->Size = System::Drawing::Size(43, 20);
 			this->L4->TabIndex = 21;
-			this->L4->Text = L"500";
+			this->L4->Text = L"300";
 			// 
 			// L5
 			// 
@@ -465,7 +499,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L5->Name = L"L5";
 			this->L5->Size = System::Drawing::Size(43, 20);
 			this->L5->TabIndex = 22;
-			this->L5->Text = L"400";
+			this->L5->Text = L"200";
 			// 
 			// L6
 			// 
@@ -473,7 +507,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L6->Name = L"L6";
 			this->L6->Size = System::Drawing::Size(43, 20);
 			this->L6->TabIndex = 23;
-			this->L6->Text = L"300";
+			this->L6->Text = L"100";
 			// 
 			// fi
 			// 
@@ -537,7 +571,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->groupBox1->Controls->Add(this->label14);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox1->Location = System::Drawing::Point(12, 12);
+			this->groupBox1->Location = System::Drawing::Point(12, 61);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(233, 264);
 			this->groupBox1->TabIndex = 29;
@@ -556,66 +590,98 @@ private: System::Windows::Forms::TextBox^ teta;
 			// 
 			chartArea2->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea2);
-			this->chart1->Location = System::Drawing::Point(714, 263);
+			this->chart1->Location = System::Drawing::Point(794, 332);
+			this->chart1->Margin = System::Windows::Forms::Padding(2);
 			this->chart1->Name = L"chart1";
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series2->Name = L"Series1";
-			series2->YValuesPerPoint = 4;
-			series3->ChartArea = L"ChartArea1";
-			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series3->Name = L"Series2";
-			series4->ChartArea = L"ChartArea1";
-			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series4->Name = L"Series3";
-			series5->ChartArea = L"ChartArea1";
-			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series5->Name = L"Series4";
-			series6->ChartArea = L"ChartArea1";
-			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series6->Name = L"Series5";
-			series7->ChartArea = L"ChartArea1";
-			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series7->Name = L"Series6";
-			this->chart1->Series->Add(series2);
-			this->chart1->Series->Add(series3);
-			this->chart1->Series->Add(series4);
-			this->chart1->Series->Add(series5);
-			this->chart1->Series->Add(series6);
-			this->chart1->Series->Add(series7);
-			this->chart1->Size = System::Drawing::Size(288, 237);
+			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
+			series8->ChartArea = L"ChartArea1";
+			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series8->Name = L"Series1";
+			series9->ChartArea = L"ChartArea1";
+			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series9->Name = L"Series2";
+			series10->ChartArea = L"ChartArea1";
+			series10->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series10->Name = L"Series3";
+			series11->ChartArea = L"ChartArea1";
+			series11->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series11->Name = L"Series4";
+			series12->ChartArea = L"ChartArea1";
+			series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series12->Name = L"Series5";
+			series13->ChartArea = L"ChartArea1";
+			series13->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series13->Name = L"Series6";
+			series14->ChartArea = L"ChartArea1";
+			series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series14->Name = L"Series7";
+			this->chart1->Series->Add(series8);
+			this->chart1->Series->Add(series9);
+			this->chart1->Series->Add(series10);
+			this->chart1->Series->Add(series11);
+			this->chart1->Series->Add(series12);
+			this->chart1->Series->Add(series13);
+			this->chart1->Series->Add(series14);
+			this->chart1->Size = System::Drawing::Size(355, 295);
 			this->chart1->TabIndex = 30;
 			this->chart1->Text = L"chart1";
+			this->chart1->TextAntiAliasingQuality = System::Windows::Forms::DataVisualization::Charting::TextAntiAliasingQuality::Normal;
 			// 
 			// chart2
 			// 
 			chartArea3->Name = L"ChartArea1";
 			this->chart2->ChartAreas->Add(chartArea3);
-			this->chart2->Location = System::Drawing::Point(714, 20);
+			this->chart2->Location = System::Drawing::Point(794, 20);
+			this->chart2->Margin = System::Windows::Forms::Padding(2);
 			this->chart2->Name = L"chart2";
-			series8->ChartArea = L"ChartArea1";
-			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series8->Name = L"Series1";
-			series8->YValuesPerPoint = 4;
-			this->chart2->Series->Add(series8);
-			this->chart2->Size = System::Drawing::Size(288, 237);
+			this->chart2->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
+			series15->ChartArea = L"ChartArea1";
+			series15->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series15->Name = L"Series1";
+			series15->YValuesPerPoint = 4;
+			series16->ChartArea = L"ChartArea1";
+			series16->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series16->Name = L"Series2";
+			series17->ChartArea = L"ChartArea1";
+			series17->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series17->Name = L"Series3";
+			series18->ChartArea = L"ChartArea1";
+			series18->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series18->Name = L"Series4";
+			series19->ChartArea = L"ChartArea1";
+			series19->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series19->Name = L"Series5";
+			series20->ChartArea = L"ChartArea1";
+			series20->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series20->Name = L"Series6";
+			series21->ChartArea = L"ChartArea1";
+			series21->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series21->Name = L"Series7";
+			this->chart2->Series->Add(series15);
+			this->chart2->Series->Add(series16);
+			this->chart2->Series->Add(series17);
+			this->chart2->Series->Add(series18);
+			this->chart2->Series->Add(series19);
+			this->chart2->Series->Add(series20);
+			this->chart2->Series->Add(series21);
+			this->chart2->Size = System::Drawing::Size(355, 295);
 			this->chart2->TabIndex = 31;
 			this->chart2->Text = L"chart1";
 			// 
-			// chart3
+			// chart4
 			// 
 			chartArea4->Name = L"ChartArea1";
-			this->chart3->ChartAreas->Add(chartArea4);
-			this->chart3->Location = System::Drawing::Point(420, 20);
-			this->chart3->Name = L"chart3";
-			series9->ChartArea = L"ChartArea1";
-			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series9->Name = L"Series1";
-			series9->YValuesPerPoint = 4;
-			this->chart3->Series->Add(series9);
-			this->chart3->Size = System::Drawing::Size(288, 237);
-			this->chart3->TabIndex = 32;
-			this->chart3->Text = L"chart1";
+			this->chart4->ChartAreas->Add(chartArea4);
+			this->chart4->Location = System::Drawing::Point(433, 20);
+			this->chart4->Name = L"chart4";
+			series22->ChartArea = L"ChartArea1";
+			series22->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series22->Name = L"Series1";
+			series22->YValuesPerPoint = 4;
+			this->chart4->Series->Add(series22);
+			this->chart4->Size = System::Drawing::Size(355, 295);
+			this->chart4->TabIndex = 32;
+			this->chart4->Text = L"chart1";
 			// 
 			// groupBox2
 			// 
@@ -637,7 +703,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->groupBox2->Controls->Add(this->z_start);
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox2->Location = System::Drawing::Point(258, 12);
+			this->groupBox2->Location = System::Drawing::Point(258, 61);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(142, 310);
 			this->groupBox2->TabIndex = 33;
@@ -659,7 +725,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->steps->Name = L"steps";
 			this->steps->Size = System::Drawing::Size(86, 20);
 			this->steps->TabIndex = 36;
-			this->steps->Text = L"500";
+			this->steps->Text = L"50";
 			// 
 			// label21
 			// 
@@ -685,7 +751,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->x_end->Name = L"x_end";
 			this->x_end->Size = System::Drawing::Size(43, 20);
 			this->x_end->TabIndex = 30;
-			this->x_end->Text = L"520";
+			this->x_end->Text = L"30";
 			// 
 			// label17
 			// 
@@ -720,7 +786,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->y_end->Name = L"y_end";
 			this->y_end->Size = System::Drawing::Size(43, 20);
 			this->y_end->TabIndex = 32;
-			this->y_end->Text = L"125";
+			this->y_end->Text = L"15";
 			// 
 			// z_end
 			// 
@@ -728,7 +794,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->z_end->Name = L"z_end";
 			this->z_end->Size = System::Drawing::Size(43, 20);
 			this->z_end->TabIndex = 31;
-			this->z_end->Text = L"200";
+			this->z_end->Text = L"20";
 			// 
 			// x_start
 			// 
@@ -804,7 +870,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->groupBox3->Controls->Add(this->zT);
 			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox3->Location = System::Drawing::Point(12, 299);
+			this->groupBox3->Location = System::Drawing::Point(13, 366);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(232, 182);
 			this->groupBox3->TabIndex = 34;
@@ -970,23 +1036,23 @@ private: System::Windows::Forms::TextBox^ teta;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1010, 507);
+			this->ClientSize = System::Drawing::Size(1180, 639);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->chart3);
+			this->Controls->Add(this->chart4);
 			this->Controls->Add(this->chart2);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->View);
+			this->Controls->Add(this->chart3);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
 			this->Text = L" ";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart4))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
@@ -995,7 +1061,31 @@ private: System::Windows::Forms::TextBox^ teta;
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
+	{	
+		//Wyczyszczenie wykresów
+		chart1->Series["Series1"]->Points->Clear();
+		chart1->Series["Series2"]->Points->Clear();
+		chart1->Series["Series3"]->Points->Clear();
+		chart1->Series["Series4"]->Points->Clear();
+		chart1->Series["Series5"]->Points->Clear();
+		chart1->Series["Series6"]->Points->Clear();
+
+		chart2->Series["Series1"]->Points->Clear();
+		chart2->Series["Series2"]->Points->Clear();
+		chart2->Series["Series3"]->Points->Clear();
+		chart2->Series["Series4"]->Points->Clear();
+		chart2->Series["Series5"]->Points->Clear();
+		chart2->Series["Series6"]->Points->Clear();
+
+		chart3->Series["Series1"]->Points->Clear();
+		chart3->Series["Series2"]->Points->Clear();
+		chart3->Series["Series3"]->Points->Clear();
+		chart3->Series["Series4"]->Points->Clear();
+		chart3->Series["Series5"]->Points->Clear();
+		chart3->Series["Series6"]->Points->Clear();
+
+		//Zebranie danych z GUI
 		double L1 = to_double(this->L1->Text);
 		double L2 = to_double(this->L2->Text);
 		double L3 = to_double(this->L3->Text);
@@ -1017,18 +1107,21 @@ private: System::Windows::Forms::TextBox^ teta;
 		double z_end = to_double(this->z_end->Text);
 		double steps = to_double(this->steps->Text);
 		double L = L5 + L6;
+
+		//Okreslenie kątów
 		//alpha1
-		double angle1 = 45;
-		double alpha1 = angle1 * M_PI / 180.0; // konwersja kąta na radiany
+		double const angle1 = 30;
+		double const alpha1 = angle1 * M_PI / 180.0; // konwersja kąta na radiany
 		//alpha2
-		double angle2 = 45;
-		double alpha2 = angle2 * M_PI / 180.0; // konwersja kąta na radiany
+		double const angle2 = 0;
+		double const alpha2 = angle2 * M_PI / 180.0; // konwersja kąta na radiany
 		//alpha3
-		double angle3 = 45;
-		double alpha3 = angle3 * M_PI / 180.0; // konwersja kąta na radiany
+		double const angle3 = 0;
+		double const alpha3 = angle3 * M_PI / 180.0; // konwersja kąta na radiany
 		//alpha4
-		double angle4 = 45;
-		double alpha4 = angle4 * M_PI / 180.0; // konwersja kąta na radiany
+		double const angle4 = 0;
+		double const alpha4 = angle4 * M_PI / 180.0; // konwersja kąta na radiany
+
 		//sin and cos
 		double cos_value_teta = std::cos(teta); // obliczenie cosinusa
 		double sin_value_teta = std::sin(teta); // obliczenie sinusa
@@ -1042,66 +1135,184 @@ private: System::Windows::Forms::TextBox^ teta;
 		double sin_value23 = std::sin(alpha2 + alpha3); // obliczenie sinusa
 		double cos_value234 = std::cos(alpha2 + alpha3 + alpha4); // obliczenie cosinusa
 		double sin_value234 = std::sin(alpha2 + alpha3 + alpha4); // obliczenie sinusa
+
 		//Punkt0
 		int x0 = 0;
 		int y0 = 0;
-		int z0 = 0;
+		int z0 = 0;		
 		//Punkt1
-		int x1 = L1 * cos_value1;
-		int y1 = L1 * sin_value1;
-		int z1 = 0;
+		int x1 = 0;
+		int y1 = 0;
+		int z1 = L1;
 		//Punkt2
 		int x2 = x1 + d * sin_value1;
 		int y2 = y1 - d * cos_value1;
-		int z2 = L2 * sin_value2;
+		int z2 = z1;
 		//Punkt3
-		int x3 = x2 - (d - ee) * sin_value1;
-		int y3 = y2 + (d - ee) * cos_value1;
-		int z3 = z2;
-		//Punkt4
-		int x4 = x3 + L3 * cos_value1 * cos_value23;
-		int y4 = y3 + L3 * sin_value1 * cos_value23;
-		int z4 = z3 + L3 * sin_value23;
+		int x3 = x2 + L2 * cos_value2 * cos_value1;
+		int y3 = y2 + L2 * cos_value2 * sin_value1;
+		int z3 = z2 + L2 * sin_value2;
+		//Punkt4 
+		int x4 = x3 - (d - ee) * sin_value1;
+		int y4 = y3 + (d - ee) * cos_value1;
+		int z4 = z3;
 		//Punkt5
-		int x5 = x4 + L4 * cos_value1 * cos_value234 ;
-		int y5 = y4 + L4 * sin_value1 * cos_value234;
-		int z5 = z4 + L4 * sin_value234;
+		int x5 = x4 + L3 * cos_value1 * cos_value23;
+		int y5 = y4 + L3 * sin_value1 * cos_value23;
+		int z5 = z4 + L3 * sin_value23;
 		//Punkt6 
-		int xT = x5 + L * cos_value_teta * cos_value_fi;
-		int yT = y5 + L * cos_value_teta * sin_value_fi;
-		int zT = z5 + L * sin_value_teta;
+		int x6 = x5 + L4 * cos_value1 * cos_value23;
+		int y6 = y5 + L4 * sin_value1 * cos_value234;
+		int z6 = z5 + L4 * sin_value234;
+		//Punkt TCP
+		int xzT = x6 + L * cos_value_teta * cos_value_fi;
+		int yzT = y6 + L * cos_value_teta * sin_value_fi;
+		int zzT = z6 + L * sin_value_teta;
+
+		String^ xt = System::Convert::ToString(xzT);
+		this->xT->Text = xt;
+		String^ yt = System::Convert::ToString(yzT);
+		this->yT->Text = yt;
+		String^ zt = System::Convert::ToString(zzT);
+		this->zT->Text = zt;
+
+		//Wykres XY/////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////////////
 		// ustaw zakre osi
 		chart1->ChartAreas[0]->AxisX->Title = "X";
 		chart1->ChartAreas[0]->AxisY->Title = "Y";
-		chart1->ChartAreas[0]->AxisX->Minimum = -1000;
-		chart1->ChartAreas[0]->AxisX->Maximum = 1000;
-		chart1->ChartAreas[0]->AxisY->Minimum = -1000;
-		chart1->ChartAreas[0]->AxisY->Maximum = 1000;
-		chart1->ChartAreas[0]->AxisX->Interval = 100;
-		chart1->ChartAreas[0]->AxisY->Interval = 100;
+		chart1->ChartAreas[0]->AxisX->Minimum = -1500;
+		chart1->ChartAreas[0]->AxisX->Maximum = 1500;
+		chart1->ChartAreas[0]->AxisY->Minimum = -1500;
+		chart1->ChartAreas[0]->AxisY->Maximum = 1500;
+		chart1->ChartAreas[0]->AxisX->Interval = 500;
+		chart1->ChartAreas[0]->AxisY->Interval = 500;
 
 		// ustaw marginesy wyświetlania
 		chart1->ChartAreas[0]->InnerPlotPosition->Auto = false;
-		chart1->ChartAreas[0]->InnerPlotPosition->Width = 80;
-		chart1->ChartAreas[0]->InnerPlotPosition->Height = 80;
-		chart1->ChartAreas[0]->InnerPlotPosition->X = 10;
+		chart1->ChartAreas[0]->InnerPlotPosition->Width = 70;
+		chart1->ChartAreas[0]->InnerPlotPosition->Height = 70;
+		chart1->ChartAreas[0]->InnerPlotPosition->X = 20;
 		chart1->ChartAreas[0]->InnerPlotPosition->Y = 10;
 
 		// usuń siatkę
 		chart1->ChartAreas[0]->AxisX->MajorGrid->Enabled = false;
 		chart1->ChartAreas[0]->AxisY->MajorGrid->Enabled = false;
+
+		//dodawanie ramion
+		//ramie 1
 		chart1->Series["Series1"]->Points->AddXY(x0, y0);
 		chart1->Series["Series1"]->Points->AddXY(x1, y1);
+		//polaczenie
 		chart1->Series["Series2"]->Points->AddXY(x1, y1);
 		chart1->Series["Series2"]->Points->AddXY(x2, y2);
+		//ramie 2
 		chart1->Series["Series3"]->Points->AddXY(x2, y2);
 		chart1->Series["Series3"]->Points->AddXY(x3, y3);
+		//ramie 3
 		chart1->Series["Series4"]->Points->AddXY(x3, y3);
 		chart1->Series["Series4"]->Points->AddXY(x4, y4);
+		//ramie 4
 		chart1->Series["Series5"]->Points->AddXY(x4, y4);
 		chart1->Series["Series5"]->Points->AddXY(x5, y5);
+		//ramie 5
 		chart1->Series["Series6"]->Points->AddXY(x5, y5);
-		chart1->Series["Series6"]->Points->AddXY(xT, yT);
+		chart1->Series["Series6"]->Points->AddXY(x6, y6);
+		//ramie 6
+		chart1->Series["Series7"]->Points->AddXY(x6, y6);
+		chart1->Series["Series7"]->Points->AddXY(xzT, yzT);
+
+		//Wykres XZ/////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////////////
+		// ustaw zakre osi
+		chart2->ChartAreas[0]->AxisX->Title = "X";
+		chart2->ChartAreas[0]->AxisY->Title = "Z";
+		chart2->ChartAreas[0]->AxisX->Minimum = -1500;
+		chart2->ChartAreas[0]->AxisX->Maximum = 1500;
+		chart2->ChartAreas[0]->AxisY->Minimum = -1500;
+		chart2->ChartAreas[0]->AxisY->Maximum = 1500;
+		chart2->ChartAreas[0]->AxisX->Interval = 500;
+		chart2->ChartAreas[0]->AxisY->Interval = 500;
+
+		// ustaw marginesy wyświetlania
+		chart2->ChartAreas[0]->InnerPlotPosition->Auto = false;
+		chart2->ChartAreas[0]->InnerPlotPosition->Width = 70;
+		chart2->ChartAreas[0]->InnerPlotPosition->Height = 70;
+		chart2->ChartAreas[0]->InnerPlotPosition->X = 20;
+		chart2->ChartAreas[0]->InnerPlotPosition->Y = 10;
+
+		// usuń siatkę
+		chart2->ChartAreas[0]->AxisX->MajorGrid->Enabled = false;
+		chart2->ChartAreas[0]->AxisY->MajorGrid->Enabled = false;
+
+		//dodawanie punktów
+		//ramie 1
+		chart2->Series["Series1"]->Points->AddXY(x0, z0);
+		chart2->Series["Series1"]->Points->AddXY(x1, z1);
+		//polaczenie
+		chart2->Series["Series2"]->Points->AddXY(x1, z1);
+		chart2->Series["Series2"]->Points->AddXY(x2, z2);
+		//ramie 2
+		chart2->Series["Series3"]->Points->AddXY(x2, z2);
+		chart2->Series["Series3"]->Points->AddXY(x3, z3);
+		//ramie 3
+		chart2->Series["Series4"]->Points->AddXY(x3, z3);
+		chart2->Series["Series4"]->Points->AddXY(x4, z4);
+		//ramie 4
+		chart2->Series["Series5"]->Points->AddXY(x4, z4);
+		chart2->Series["Series5"]->Points->AddXY(x5, z5);
+		//ramie 5
+		chart2->Series["Series6"]->Points->AddXY(x5, z5);
+		chart2->Series["Series6"]->Points->AddXY(x6, z6);
+		//ramie 6
+		chart2->Series["Series7"]->Points->AddXY(x6, z6);
+		chart2->Series["Series7"]->Points->AddXY(xzT, zzT);
+
+		//Wykres YZ/////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////////////
+		// ustaw zakre osi
+		chart3->ChartAreas[0]->AxisX->Title = "Y";
+		chart3->ChartAreas[0]->AxisY->Title = "Z";
+		chart3->ChartAreas[0]->AxisX->Minimum = -1500;
+		chart3->ChartAreas[0]->AxisX->Maximum = 1500;
+		chart3->ChartAreas[0]->AxisY->Minimum = -1500;
+		chart3->ChartAreas[0]->AxisY->Maximum = 1500;
+		chart3->ChartAreas[0]->AxisX->Interval = 500;
+		chart3->ChartAreas[0]->AxisY->Interval = 500;
+
+		// ustaw marginesy wyświetlania
+		chart3->ChartAreas[0]->InnerPlotPosition->Auto = false;
+		chart3->ChartAreas[0]->InnerPlotPosition->Width = 70;
+		chart3->ChartAreas[0]->InnerPlotPosition->Height = 70;
+		chart3->ChartAreas[0]->InnerPlotPosition->X = 20;
+		chart3->ChartAreas[0]->InnerPlotPosition->Y = 10;
+
+		// usuń siatkę
+		chart3->ChartAreas[0]->AxisX->MajorGrid->Enabled = false;
+		chart3->ChartAreas[0]->AxisY->MajorGrid->Enabled = false;
+
+		//dodawanie ramion
+		//ramie 1
+		chart3->Series["Series1"]->Points->AddXY(y0, z0);
+		chart3->Series["Series1"]->Points->AddXY(y1, z1);
+		//polaczenie
+		chart3->Series["Series2"]->Points->AddXY(y1, z1);
+		chart3->Series["Series2"]->Points->AddXY(y2, z2);
+		//ramie 2
+		chart3->Series["Series3"]->Points->AddXY(y2, z2);
+		chart3->Series["Series3"]->Points->AddXY(y3, z3);
+		//ramie 3
+		chart3->Series["Series4"]->Points->AddXY(y3, z3);
+		chart3->Series["Series4"]->Points->AddXY(y4, z4);
+		//ramie 4
+		chart3->Series["Series5"]->Points->AddXY(y4, z4);
+		chart3->Series["Series5"]->Points->AddXY(y5, z5);
+		//ramie 5
+		chart3->Series["Series6"]->Points->AddXY(y5, z5);
+		chart3->Series["Series6"]->Points->AddXY(y6, z6);
+		//ramie 6
+		chart3->Series["Series7"]->Points->AddXY(y6, z6);
+		chart3->Series["Series7"]->Points->AddXY(yzT, zzT);
 	}
 };
 };

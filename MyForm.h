@@ -16,6 +16,16 @@ namespace RobotKinematics {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	
+	//Struktury do animacji
+	struct Axi{
+		double p01, p02, p0_2, p_r, p_p, p_t;
+	};
+	struct Position {
+		Axi x;
+		Axi y;
+		Axi z;
+	};
 
 	/// <summary>
 	/// Summary for MyForm
@@ -36,6 +46,7 @@ namespace RobotKinematics {
 			double  managed = std::stod(unmanaged);
 			return managed;
 		};
+		
 
 	protected:
 		/// <summary>
@@ -145,6 +156,8 @@ private: System::Windows::Forms::TextBox^ zT;
 
 	private: System::Windows::Forms::Label^ label33;
 private: System::Windows::Forms::TextBox^ teta;
+private: System::Windows::Forms::Button^ prev;
+private: System::Windows::Forms::Button^ next;
 	public protected:
 
 
@@ -264,6 +277,8 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->yT = (gcnew System::Windows::Forms::TextBox());
 			this->zT = (gcnew System::Windows::Forms::TextBox());
+			this->prev = (gcnew System::Windows::Forms::Button());
+			this->next = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
@@ -451,7 +466,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L1->Name = L"L1";
 			this->L1->Size = System::Drawing::Size(43, 20);
 			this->L1->TabIndex = 16;
-			this->L1->Text = L"700";
+			this->L1->Text = L"1000";
 			// 
 			// e
 			// 
@@ -459,7 +474,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->e->Name = L"e";
 			this->e->Size = System::Drawing::Size(43, 20);
 			this->e->TabIndex = 17;
-			this->e->Text = L"10";
+			this->e->Text = L"200";
 			// 
 			// d
 			// 
@@ -467,7 +482,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->d->Name = L"d";
 			this->d->Size = System::Drawing::Size(43, 20);
 			this->d->TabIndex = 18;
-			this->d->Text = L"5";
+			this->d->Text = L"200";
 			// 
 			// L3
 			// 
@@ -475,7 +490,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L3->Name = L"L3";
 			this->L3->Size = System::Drawing::Size(43, 20);
 			this->L3->TabIndex = 19;
-			this->L3->Text = L"500";
+			this->L3->Text = L"800";
 			// 
 			// L2
 			// 
@@ -483,7 +498,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L2->Name = L"L2";
 			this->L2->Size = System::Drawing::Size(43, 20);
 			this->L2->TabIndex = 20;
-			this->L2->Text = L"400";
+			this->L2->Text = L"1000";
 			// 
 			// L4
 			// 
@@ -491,7 +506,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L4->Name = L"L4";
 			this->L4->Size = System::Drawing::Size(43, 20);
 			this->L4->TabIndex = 21;
-			this->L4->Text = L"300";
+			this->L4->Text = L"500";
 			// 
 			// L5
 			// 
@@ -499,7 +514,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L5->Name = L"L5";
 			this->L5->Size = System::Drawing::Size(43, 20);
 			this->L5->TabIndex = 22;
-			this->L5->Text = L"200";
+			this->L5->Text = L"250";
 			// 
 			// L6
 			// 
@@ -507,7 +522,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->L6->Name = L"L6";
 			this->L6->Size = System::Drawing::Size(43, 20);
 			this->L6->TabIndex = 23;
-			this->L6->Text = L"100";
+			this->L6->Text = L"150";
 			// 
 			// fi
 			// 
@@ -523,7 +538,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->gamma1->Name = L"gamma1";
 			this->gamma1->Size = System::Drawing::Size(43, 20);
 			this->gamma1->TabIndex = 26;
-			this->gamma1->Text = L"1";
+			this->gamma1->Text = L"-1";
 			// 
 			// gamma2
 			// 
@@ -531,7 +546,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->gamma2->Name = L"gamma2";
 			this->gamma2->Size = System::Drawing::Size(43, 20);
 			this->gamma2->TabIndex = 27;
-			this->gamma2->Text = L"1";
+			this->gamma2->Text = L"-1";
 			// 
 			// gamma3
 			// 
@@ -539,7 +554,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->gamma3->Name = L"gamma3";
 			this->gamma3->Size = System::Drawing::Size(43, 20);
 			this->gamma3->TabIndex = 28;
-			this->gamma3->Text = L"-1";
+			this->gamma3->Text = L"1";
 			// 
 			// groupBox1
 			// 
@@ -584,7 +599,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->teta->Name = L"teta";
 			this->teta->Size = System::Drawing::Size(43, 20);
 			this->teta->TabIndex = 29;
-			this->teta->Text = L"60";
+			this->teta->Text = L"30";
 			// 
 			// chart1
 			// 
@@ -751,7 +766,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->x_end->Name = L"x_end";
 			this->x_end->Size = System::Drawing::Size(43, 20);
 			this->x_end->TabIndex = 30;
-			this->x_end->Text = L"30";
+			this->x_end->Text = L"800";
 			// 
 			// label17
 			// 
@@ -786,7 +801,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->y_end->Name = L"y_end";
 			this->y_end->Size = System::Drawing::Size(43, 20);
 			this->y_end->TabIndex = 32;
-			this->y_end->Text = L"15";
+			this->y_end->Text = L"-100";
 			// 
 			// z_end
 			// 
@@ -794,7 +809,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->z_end->Name = L"z_end";
 			this->z_end->Size = System::Drawing::Size(43, 20);
 			this->z_end->TabIndex = 31;
-			this->z_end->Text = L"20";
+			this->z_end->Text = L"1200";
 			// 
 			// x_start
 			// 
@@ -802,7 +817,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->x_start->Name = L"x_start";
 			this->x_start->Size = System::Drawing::Size(43, 20);
 			this->x_start->TabIndex = 24;
-			this->x_start->Text = L"10";
+			this->x_start->Text = L"1000";
 			// 
 			// label1
 			// 
@@ -837,7 +852,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->y_start->Name = L"y_start";
 			this->y_start->Size = System::Drawing::Size(43, 20);
 			this->y_start->TabIndex = 26;
-			this->y_start->Text = L"40";
+			this->y_start->Text = L"800";
 			// 
 			// z_start
 			// 
@@ -845,7 +860,7 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->z_start->Name = L"z_start";
 			this->z_start->Size = System::Drawing::Size(43, 20);
 			this->z_start->TabIndex = 25;
-			this->z_start->Text = L"15";
+			this->z_start->Text = L"1000";
 			// 
 			// groupBox3
 			// 
@@ -1032,11 +1047,31 @@ private: System::Windows::Forms::TextBox^ teta;
 			this->zT->Size = System::Drawing::Size(43, 20);
 			this->zT->TabIndex = 39;
 			// 
+			// prev
+			// 
+			this->prev->Location = System::Drawing::Point(270, 389);
+			this->prev->Name = L"prev";
+			this->prev->Size = System::Drawing::Size(51, 23);
+			this->prev->TabIndex = 36;
+			this->prev->Text = L"Prev";
+			this->prev->UseVisualStyleBackColor = true;
+			// 
+			// next
+			// 
+			this->next->Location = System::Drawing::Point(349, 389);
+			this->next->Name = L"next";
+			this->next->Size = System::Drawing::Size(51, 23);
+			this->next->TabIndex = 37;
+			this->next->Text = L"Next";
+			this->next->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1180, 639);
+			this->Controls->Add(this->next);
+			this->Controls->Add(this->prev);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->chart4);
@@ -1070,6 +1105,7 @@ private: System::Windows::Forms::TextBox^ teta;
 		chart1->Series["Series4"]->Points->Clear();
 		chart1->Series["Series5"]->Points->Clear();
 		chart1->Series["Series6"]->Points->Clear();
+		chart1->Series["Series7"]->Points->Clear();
 
 		chart2->Series["Series1"]->Points->Clear();
 		chart2->Series["Series2"]->Points->Clear();
@@ -1077,6 +1113,7 @@ private: System::Windows::Forms::TextBox^ teta;
 		chart2->Series["Series4"]->Points->Clear();
 		chart2->Series["Series5"]->Points->Clear();
 		chart2->Series["Series6"]->Points->Clear();
+		chart2->Series["Series7"]->Points->Clear();
 
 		chart3->Series["Series1"]->Points->Clear();
 		chart3->Series["Series2"]->Points->Clear();
@@ -1084,6 +1121,7 @@ private: System::Windows::Forms::TextBox^ teta;
 		chart3->Series["Series4"]->Points->Clear();
 		chart3->Series["Series5"]->Points->Clear();
 		chart3->Series["Series6"]->Points->Clear();
+		chart3->Series["Series7"]->Points->Clear();
 
 		//Zebranie danych z GUI
 		double L1 = to_double(this->L1->Text);
@@ -1108,72 +1146,109 @@ private: System::Windows::Forms::TextBox^ teta;
 		double steps = to_double(this->steps->Text);
 		double L = L5 + L6;
 
-		//Okreslenie kątów
-		//alpha1
-		double const angle1 = 30;
-		double const alpha1 = angle1 * M_PI / 180.0; // konwersja kąta na radiany
-		//alpha2
-		double const angle2 = 0;
-		double const alpha2 = angle2 * M_PI / 180.0; // konwersja kąta na radiany
-		//alpha3
-		double const angle3 = 0;
-		double const alpha3 = angle3 * M_PI / 180.0; // konwersja kąta na radiany
-		//alpha4
-		double const angle4 = 0;
-		double const alpha4 = angle4 * M_PI / 180.0; // konwersja kąta na radiany
-
 		//sin and cos
 		double cos_value_teta = std::cos(teta); // obliczenie cosinusa
 		double sin_value_teta = std::sin(teta); // obliczenie sinusa
 		double cos_value_fi = std::cos(fi); // obliczenie cosinusa
 		double sin_value_fi = std::sin(fi); // obliczenie sinusa
-		double cos_value1 = std::cos(alpha1); // obliczenie cosinusa
-		double sin_value1 = std::sin(alpha1); // obliczenie sinusa
-		double cos_value2 = std::cos(alpha2); // obliczenie cosinusa
-		double sin_value2 = std::sin(alpha2); // obliczenie sinusa
-		double cos_value23 = std::cos(alpha2 + alpha3); // obliczenie cosinusa
-		double sin_value23 = std::sin(alpha2 + alpha3); // obliczenie sinusa
-		double cos_value234 = std::cos(alpha2 + alpha3 + alpha4); // obliczenie cosinusa
-		double sin_value234 = std::sin(alpha2 + alpha3 + alpha4); // obliczenie sinusa
+
+		//Lokacja pamieci dla punktow ruchu
+		Position * pose = new Position[steps];
+
+		//Sekwencja obliczeniowa dla kinematyki odwrotnej
+		//1
+		double x_t = x_start;
+		double y_t = y_start;
+		double z_t = z_start;
+		//2
+		double x_p = x_t - L * cos_value_teta * cos_value_fi;
+		double y_p = y_t - L * cos_value_teta * sin_value_fi;
+		double z_p = z_t - L * sin_value_fi;
+		//3,4
+		double sin_value1 = (1/(x_p*x_p + y_p*y_p))*(ee * x_p + gamma1 * y_p * sqrt(x_p*x_p + y_p*y_p - ee*ee));
+		double cos_value1 = (1/(x_p*x_p + y_p*y_p))*(ee * y_p + gamma1 * x_p * sqrt(x_p*x_p + y_p*y_p - ee*ee));
+		double fi1 = sin_value1 + cos_value1;
+		//5,6
+		double sin_value5 = cos_value_teta * (sin_value_fi * cos_value1 - cos_value_fi * sin_value1);
+		double cos_value5 = gamma3 * sqrt(1 - sin_value5 * sin_value5);
+		double fi5 = sin_value5 - cos_value5;
+		//7
+		double sin_value234 = sin_value_teta / cos_value5;
+		double cos_value234 = cos_value_teta / cos_value5 * (cos_value_fi * cos_value1 + sin_value_fi *  sin_value1);
+		double fi234 = sin_value234 - cos_value234;
+		//8
+		double x_r = x_p - L4 * sin_value1 * cos_value234;
+		double y_r = y_p - L4 * sin_value1 * cos_value234;
+		double z_r = z_p - L4 * sin_value234;
+		//9
+		double a = -L1 + gamma1 * sqrt(x_p * x_p + y_p * y_p - ee * ee);
+		double b = (1/(2 * L2)) * (a*a + z_r*z_r + L2*L2 - L3*L3);
+		//10,11
+		double sin_value2 = (1 / (a*a - z_r*z_r)) * (z_r * b + gamma2 * a * sqrt(a*a + z_r*z_r - b*b));
+		double cos_value2 = (1 / (a*a - z_r*z_r)) * (z_r * b + gamma2 * a * sqrt(a*a + z_r*z_r - b*b));
+		double fi2 = sin_value2 - cos_value2;
+		//12
+		double sin_value3 = (gamma2 / L3) * sqrt(a * a + z_r * z_r - b * b);
+		double cos_value3 = (b - L2) / L3;
+		double fi3 = sin_value3 - cos_value3;
+		//13
+		double sin_value23 = (1 / L3) * (z_r - (L2 / (a*a + z_r*z_r) * (z_r * b + gamma2 * a * sqrt(a*a + z_r*z_r - b*b))));
+		double cos_value23 = (1 / L3) * (z_r - (L2 / (a*a + z_r*z_r) * (a * b - gamma2 * z_r * sqrt(a*a + z_r*z_r - b*b))));
+		double fi23 = sin_value23 - cos_value23;
+		//14
+		double sin_value4 = sin_value234 * cos_value23 - cos_value234 * sin_value23;
+		double cos_value4 = cos_value234 * cos_value23 + sin_value234 * sin_value23;
+		double fi4 = sin_value4 - cos_value4;
 
 		//Punkt0
-		int x0 = 0;
-		int y0 = 0;
-		int z0 = 0;		
+		double x0 = 0;
+		double y0 = 0;
+		double z0 = 0;
 		//Punkt1
-		int x1 = 0;
-		int y1 = 0;
-		int z1 = L1;
-		//Punkt2
-		int x2 = x1 + d * sin_value1;
-		int y2 = y1 - d * cos_value1;
-		int z2 = z1;
-		//Punkt3
-		int x3 = x2 + L2 * cos_value2 * cos_value1;
-		int y3 = y2 + L2 * cos_value2 * sin_value1;
-		int z3 = z2 + L2 * sin_value2;
-		//Punkt4 
-		int x4 = x3 - (d - ee) * sin_value1;
-		int y4 = y3 + (d - ee) * cos_value1;
-		int z4 = z3;
-		//Punkt5
-		int x5 = x4 + L3 * cos_value1 * cos_value23;
-		int y5 = y4 + L3 * sin_value1 * cos_value23;
-		int z5 = z4 + L3 * sin_value23;
-		//Punkt6 
-		int x6 = x5 + L4 * cos_value1 * cos_value23;
-		int y6 = y5 + L4 * sin_value1 * cos_value234;
-		int z6 = z5 + L4 * sin_value234;
-		//Punkt TCP
-		int xzT = x6 + L * cos_value_teta * cos_value_fi;
-		int yzT = y6 + L * cos_value_teta * sin_value_fi;
-		int zzT = z6 + L * sin_value_teta;
+		double x1 = 0;
+		double y1 = 0;
+		double z1 = L1;
 
-		String^ xt = System::Convert::ToString(xzT);
+		//Pętla animacji
+		for (int i = 0; i < steps; i++)
+		{
+			//point01
+			pose[i].x.p01 = x1 + d * sin_value1;
+			pose[i].y.p01 = y1 - d * cos_value1;
+			pose[i].z.p01 = z1;
+
+			//point02
+			pose[i].x.p02 = pose[i].x.p01 + L2 * cos_value2 * cos_value1;
+			pose[i].y.p02 = pose[i].y.p01 + L2 * cos_value2 * sin_value1;
+			pose[i].z.p02 = pose[i].z.p01 + L2 * sin_value2;
+
+			//point0_2
+			pose[i].x.p0_2 = pose[i].x.p02 - (d - ee) * sin_value1;
+			pose[i].y.p0_2 = pose[i].y.p02 + (d - ee) * cos_value1;
+			pose[i].z.p0_2 = pose[i].z.p02;
+
+			//point02
+			pose[i].x.p_r = pose[i].x.p0_2 + L3 * cos_value1 * cos_value23;
+			pose[i].y.p_r = pose[i].y.p0_2 + L3 * sin_value1 * cos_value23;
+			pose[i].z.p_r = pose[i].z.p0_2 + L3 * sin_value23;
+
+			//point_p
+			pose[i].x.p_p = pose[i].x.p_r + L4 * cos_value1 * cos_value234;
+			pose[i].y.p_p = pose[i].y.p_r + L4 * sin_value1 * cos_value234;
+			pose[i].z.p_p = pose[i].z.p_r + L4 * sin_value234;
+
+			//pointp
+			pose[i].x.p_t = pose[i].x.p_p + L * cos_value_teta * cos_value_fi;
+			pose[i].y.p_t = pose[i].y.p_p + L * cos_value_teta * sin_value_fi;
+			pose[i].z.p_t = pose[i].z.p_p + L * sin_value_teta;
+		};
+
+		////Displaying TCP value
+		String^ xt = System::Convert::ToString(x_t);
 		this->xT->Text = xt;
-		String^ yt = System::Convert::ToString(yzT);
+		String^ yt = System::Convert::ToString(y_t);
 		this->yT->Text = yt;
-		String^ zt = System::Convert::ToString(zzT);
+		String^ zt = System::Convert::ToString(z_t);
 		this->zT->Text = zt;
 
 		//Wykres XY/////////////////////////////////////////////////////////////////////
@@ -1205,22 +1280,22 @@ private: System::Windows::Forms::TextBox^ teta;
 		chart1->Series["Series1"]->Points->AddXY(x1, y1);
 		//polaczenie
 		chart1->Series["Series2"]->Points->AddXY(x1, y1);
-		chart1->Series["Series2"]->Points->AddXY(x2, y2);
+		chart1->Series["Series2"]->Points->AddXY(pose[0].x.p01, pose[0].y.p01);
 		//ramie 2
-		chart1->Series["Series3"]->Points->AddXY(x2, y2);
-		chart1->Series["Series3"]->Points->AddXY(x3, y3);
+		chart1->Series["Series3"]->Points->AddXY(pose[0].x.p01, pose[0].y.p01);
+		chart1->Series["Series3"]->Points->AddXY(pose[0].x.p02, pose[0].y.p02);
 		//ramie 3
-		chart1->Series["Series4"]->Points->AddXY(x3, y3);
-		chart1->Series["Series4"]->Points->AddXY(x4, y4);
+		chart1->Series["Series4"]->Points->AddXY(pose[0].x.p02, pose[0].y.p02);
+		chart1->Series["Series4"]->Points->AddXY(pose[0].x.p0_2, pose[0].y.p0_2);
 		//ramie 4
-		chart1->Series["Series5"]->Points->AddXY(x4, y4);
-		chart1->Series["Series5"]->Points->AddXY(x5, y5);
+		chart1->Series["Series5"]->Points->AddXY(pose[0].x.p0_2, pose[0].y.p0_2);
+		chart1->Series["Series5"]->Points->AddXY(pose[0].x.p_r, pose[0].y.p_r);
 		//ramie 5
-		chart1->Series["Series6"]->Points->AddXY(x5, y5);
-		chart1->Series["Series6"]->Points->AddXY(x6, y6);
+		chart1->Series["Series6"]->Points->AddXY(pose[0].x.p_r, pose[0].y.p_r);
+		chart1->Series["Series6"]->Points->AddXY(pose[0].x.p_p, pose[0].y.p_p);
 		//ramie 6
-		chart1->Series["Series7"]->Points->AddXY(x6, y6);
-		chart1->Series["Series7"]->Points->AddXY(xzT, yzT);
+		chart1->Series["Series7"]->Points->AddXY(pose[0].x.p_p, pose[0].y.p_p);
+		chart1->Series["Series7"]->Points->AddXY(pose[0].x.p_t, pose[0].y.p_t);
 
 		//Wykres XZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
@@ -1245,28 +1320,28 @@ private: System::Windows::Forms::TextBox^ teta;
 		chart2->ChartAreas[0]->AxisX->MajorGrid->Enabled = false;
 		chart2->ChartAreas[0]->AxisY->MajorGrid->Enabled = false;
 
-		//dodawanie punktów
+		//dodawanie ramion
 		//ramie 1
 		chart2->Series["Series1"]->Points->AddXY(x0, z0);
 		chart2->Series["Series1"]->Points->AddXY(x1, z1);
 		//polaczenie
 		chart2->Series["Series2"]->Points->AddXY(x1, z1);
-		chart2->Series["Series2"]->Points->AddXY(x2, z2);
+		chart2->Series["Series2"]->Points->AddXY(pose[0].x.p01, pose[0].z.p01);
 		//ramie 2
-		chart2->Series["Series3"]->Points->AddXY(x2, z2);
-		chart2->Series["Series3"]->Points->AddXY(x3, z3);
+		chart2->Series["Series3"]->Points->AddXY(pose[0].x.p01, pose[0].z.p01);
+		chart2->Series["Series3"]->Points->AddXY(pose[0].x.p02, pose[0].z.p02);
 		//ramie 3
-		chart2->Series["Series4"]->Points->AddXY(x3, z3);
-		chart2->Series["Series4"]->Points->AddXY(x4, z4);
+		chart2->Series["Series4"]->Points->AddXY(pose[0].x.p02, pose[0].z.p02);
+		chart2->Series["Series4"]->Points->AddXY(pose[0].x.p0_2, pose[0].z.p0_2);
 		//ramie 4
-		chart2->Series["Series5"]->Points->AddXY(x4, z4);
-		chart2->Series["Series5"]->Points->AddXY(x5, z5);
+		chart2->Series["Series5"]->Points->AddXY(pose[0].x.p0_2, pose[0].z.p0_2);
+		chart2->Series["Series5"]->Points->AddXY(pose[0].x.p_r, pose[0].z.p_r);
 		//ramie 5
-		chart2->Series["Series6"]->Points->AddXY(x5, z5);
-		chart2->Series["Series6"]->Points->AddXY(x6, z6);
+		chart2->Series["Series6"]->Points->AddXY(pose[0].x.p_r, pose[0].z.p_r);
+		chart2->Series["Series6"]->Points->AddXY(pose[0].x.p_p, pose[0].z.p_p);
 		//ramie 6
-		chart2->Series["Series7"]->Points->AddXY(x6, z6);
-		chart2->Series["Series7"]->Points->AddXY(xzT, zzT);
+		chart2->Series["Series7"]->Points->AddXY(pose[0].x.p_p, pose[0].z.p_p);
+		chart2->Series["Series7"]->Points->AddXY(pose[0].x.p_t, pose[0].z.p_t);
 
 		//Wykres YZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
@@ -1297,22 +1372,27 @@ private: System::Windows::Forms::TextBox^ teta;
 		chart3->Series["Series1"]->Points->AddXY(y1, z1);
 		//polaczenie
 		chart3->Series["Series2"]->Points->AddXY(y1, z1);
-		chart3->Series["Series2"]->Points->AddXY(y2, z2);
+		chart3->Series["Series2"]->Points->AddXY(pose[0].y.p01, pose[0].z.p01);
 		//ramie 2
-		chart3->Series["Series3"]->Points->AddXY(y2, z2);
-		chart3->Series["Series3"]->Points->AddXY(y3, z3);
+		chart3->Series["Series3"]->Points->AddXY(pose[0].y.p01, pose[0].z.p01);
+		chart3->Series["Series3"]->Points->AddXY(pose[0].y.p02, pose[0].z.p02);
 		//ramie 3
-		chart3->Series["Series4"]->Points->AddXY(y3, z3);
-		chart3->Series["Series4"]->Points->AddXY(y4, z4);
+		chart3->Series["Series4"]->Points->AddXY(pose[0].y.p02, pose[0].z.p02);
+		chart3->Series["Series4"]->Points->AddXY(pose[0].y.p0_2, pose[0].z.p0_2);
 		//ramie 4
-		chart3->Series["Series5"]->Points->AddXY(y4, z4);
-		chart3->Series["Series5"]->Points->AddXY(y5, z5);
+		chart3->Series["Series5"]->Points->AddXY(pose[0].y.p0_2, pose[0].z.p0_2);
+		chart3->Series["Series5"]->Points->AddXY(pose[0].y.p_r, pose[0].z.p_r);
 		//ramie 5
-		chart3->Series["Series6"]->Points->AddXY(y5, z5);
-		chart3->Series["Series6"]->Points->AddXY(y6, z6);
+		chart3->Series["Series6"]->Points->AddXY(pose[0].y.p_r, pose[0].z.p_r);
+		chart3->Series["Series6"]->Points->AddXY(pose[0].y.p_p, pose[0].z.p_p);
 		//ramie 6
-		chart3->Series["Series7"]->Points->AddXY(y6, z6);
-		chart3->Series["Series7"]->Points->AddXY(yzT, zzT);
+		chart3->Series["Series7"]->Points->AddXY(pose[0].y.p_p, pose[0].z.p_p);
+		chart3->Series["Series7"]->Points->AddXY(pose[0].x.p_t, pose[0].z.p_t);
+		double x = pose[0].x.p01;
+
+		next->Text = msclr::interop::marshal_as<System::String^>(std::to_string(x));
+		delete[] pose;
+		pose = NULL;
 	}
 };
 };

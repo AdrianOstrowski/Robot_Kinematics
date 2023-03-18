@@ -189,25 +189,22 @@ private: System::Windows::Forms::Button^ next;
 			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series13 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series14 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series15 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series16 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series17 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series18 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series19 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series20 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series21 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series22 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series19 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -429,33 +426,28 @@ private: System::Windows::Forms::Button^ next;
 			this->chart3->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series1->Name = L"Series1";
-			series1->YValuesPerPoint = 4;
+			series1->Name = L"Series2";
 			series2->ChartArea = L"ChartArea1";
 			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series2->Name = L"Series2";
+			series2->Name = L"Series3";
 			series3->ChartArea = L"ChartArea1";
 			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series3->Name = L"Series3";
+			series3->Name = L"Series4";
 			series4->ChartArea = L"ChartArea1";
 			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series4->Name = L"Series4";
+			series4->Name = L"Series5";
 			series5->ChartArea = L"ChartArea1";
 			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series5->Name = L"Series5";
+			series5->Name = L"Series6";
 			series6->ChartArea = L"ChartArea1";
 			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series6->Name = L"Series6";
-			series7->ChartArea = L"ChartArea1";
-			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series7->Name = L"Series7";
+			series6->Name = L"Series1";
 			this->chart3->Series->Add(series1);
 			this->chart3->Series->Add(series2);
 			this->chart3->Series->Add(series3);
 			this->chart3->Series->Add(series4);
 			this->chart3->Series->Add(series5);
 			this->chart3->Series->Add(series6);
-			this->chart3->Series->Add(series7);
 			this->chart3->Size = System::Drawing::Size(355, 295);
 			this->chart3->TabIndex = 15;
 			this->chart3->Text = L"chart1";
@@ -609,34 +601,30 @@ private: System::Windows::Forms::Button^ next;
 			this->chart1->Margin = System::Windows::Forms::Padding(2);
 			this->chart1->Name = L"chart1";
 			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
+			series7->ChartArea = L"ChartArea1";
+			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series7->Name = L"Series2";
 			series8->ChartArea = L"ChartArea1";
 			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series8->Name = L"Series1";
+			series8->Name = L"Series3";
 			series9->ChartArea = L"ChartArea1";
 			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series9->Name = L"Series2";
+			series9->Name = L"Series4";
 			series10->ChartArea = L"ChartArea1";
 			series10->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series10->Name = L"Series3";
+			series10->Name = L"Series5";
 			series11->ChartArea = L"ChartArea1";
 			series11->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series11->Name = L"Series4";
+			series11->Name = L"Series6";
 			series12->ChartArea = L"ChartArea1";
 			series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series12->Name = L"Series5";
-			series13->ChartArea = L"ChartArea1";
-			series13->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series13->Name = L"Series6";
-			series14->ChartArea = L"ChartArea1";
-			series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series14->Name = L"Series7";
+			series12->Name = L"Series1";
+			this->chart1->Series->Add(series7);
 			this->chart1->Series->Add(series8);
 			this->chart1->Series->Add(series9);
 			this->chart1->Series->Add(series10);
 			this->chart1->Series->Add(series11);
 			this->chart1->Series->Add(series12);
-			this->chart1->Series->Add(series13);
-			this->chart1->Series->Add(series14);
 			this->chart1->Size = System::Drawing::Size(355, 295);
 			this->chart1->TabIndex = 30;
 			this->chart1->Text = L"chart1";
@@ -650,35 +638,30 @@ private: System::Windows::Forms::Button^ next;
 			this->chart2->Margin = System::Windows::Forms::Padding(2);
 			this->chart2->Name = L"chart2";
 			this->chart2->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
+			series13->ChartArea = L"ChartArea1";
+			series13->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series13->Name = L"Series2";
+			series14->ChartArea = L"ChartArea1";
+			series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series14->Name = L"Series3";
 			series15->ChartArea = L"ChartArea1";
 			series15->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series15->Name = L"Series1";
-			series15->YValuesPerPoint = 4;
+			series15->Name = L"Series4";
 			series16->ChartArea = L"ChartArea1";
 			series16->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series16->Name = L"Series2";
+			series16->Name = L"Series5";
 			series17->ChartArea = L"ChartArea1";
 			series17->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series17->Name = L"Series3";
+			series17->Name = L"Series6";
 			series18->ChartArea = L"ChartArea1";
 			series18->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series18->Name = L"Series4";
-			series19->ChartArea = L"ChartArea1";
-			series19->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series19->Name = L"Series5";
-			series20->ChartArea = L"ChartArea1";
-			series20->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series20->Name = L"Series6";
-			series21->ChartArea = L"ChartArea1";
-			series21->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series21->Name = L"Series7";
+			series18->Name = L"Series1";
+			this->chart2->Series->Add(series13);
+			this->chart2->Series->Add(series14);
 			this->chart2->Series->Add(series15);
 			this->chart2->Series->Add(series16);
 			this->chart2->Series->Add(series17);
 			this->chart2->Series->Add(series18);
-			this->chart2->Series->Add(series19);
-			this->chart2->Series->Add(series20);
-			this->chart2->Series->Add(series21);
 			this->chart2->Size = System::Drawing::Size(355, 295);
 			this->chart2->TabIndex = 31;
 			this->chart2->Text = L"chart1";
@@ -689,11 +672,11 @@ private: System::Windows::Forms::Button^ next;
 			this->chart4->ChartAreas->Add(chartArea4);
 			this->chart4->Location = System::Drawing::Point(433, 20);
 			this->chart4->Name = L"chart4";
-			series22->ChartArea = L"ChartArea1";
-			series22->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series22->Name = L"Series1";
-			series22->YValuesPerPoint = 4;
-			this->chart4->Series->Add(series22);
+			series19->ChartArea = L"ChartArea1";
+			series19->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series19->Name = L"Series1";
+			series19->YValuesPerPoint = 4;
+			this->chart4->Series->Add(series19);
 			this->chart4->Size = System::Drawing::Size(355, 295);
 			this->chart4->TabIndex = 32;
 			this->chart4->Text = L"chart1";
@@ -817,7 +800,7 @@ private: System::Windows::Forms::Button^ next;
 			this->x_start->Name = L"x_start";
 			this->x_start->Size = System::Drawing::Size(43, 20);
 			this->x_start->TabIndex = 24;
-			this->x_start->Text = L"1000";
+			this->x_start->Text = L"600";
 			// 
 			// label1
 			// 
@@ -852,7 +835,7 @@ private: System::Windows::Forms::Button^ next;
 			this->y_start->Name = L"y_start";
 			this->y_start->Size = System::Drawing::Size(43, 20);
 			this->y_start->TabIndex = 26;
-			this->y_start->Text = L"800";
+			this->y_start->Text = L"700";
 			// 
 			// z_start
 			// 
@@ -860,7 +843,7 @@ private: System::Windows::Forms::Button^ next;
 			this->z_start->Name = L"z_start";
 			this->z_start->Size = System::Drawing::Size(43, 20);
 			this->z_start->TabIndex = 25;
-			this->z_start->Text = L"1000";
+			this->z_start->Text = L"800";
 			// 
 			// groupBox3
 			// 
@@ -1105,7 +1088,6 @@ private: System::Windows::Forms::Button^ next;
 		chart1->Series["Series4"]->Points->Clear();
 		chart1->Series["Series5"]->Points->Clear();
 		chart1->Series["Series6"]->Points->Clear();
-		chart1->Series["Series7"]->Points->Clear();
 
 		chart2->Series["Series1"]->Points->Clear();
 		chart2->Series["Series2"]->Points->Clear();
@@ -1113,7 +1095,6 @@ private: System::Windows::Forms::Button^ next;
 		chart2->Series["Series4"]->Points->Clear();
 		chart2->Series["Series5"]->Points->Clear();
 		chart2->Series["Series6"]->Points->Clear();
-		chart2->Series["Series7"]->Points->Clear();
 
 		chart3->Series["Series1"]->Points->Clear();
 		chart3->Series["Series2"]->Points->Clear();
@@ -1121,7 +1102,6 @@ private: System::Windows::Forms::Button^ next;
 		chart3->Series["Series4"]->Points->Clear();
 		chart3->Series["Series5"]->Points->Clear();
 		chart3->Series["Series6"]->Points->Clear();
-		chart3->Series["Series7"]->Points->Clear();
 
 		//Zebranie danych z GUI
 		double L1 = to_double(this->L1->Text);
@@ -1147,10 +1127,12 @@ private: System::Windows::Forms::Button^ next;
 		double L = L5 + L6;
 
 		//sin and cos
-		double cos_value_teta = std::cos(teta); // obliczenie cosinusa
-		double sin_value_teta = std::sin(teta); // obliczenie sinusa
-		double cos_value_fi = std::cos(fi); // obliczenie cosinusa
-		double sin_value_fi = std::sin(fi); // obliczenie sinusa
+		double teta_radians = teta * M_PI / 180.0;
+		double fi_radians = fi * M_PI / 180.0;
+		double cos_value_teta = std::cos(teta_radians); // obliczenie cosinusa
+		double sin_value_teta = std::sin(teta_radians); // obliczenie sinusa
+		double cos_value_fi = std::cos(fi_radians); // obliczenie cosinusa
+		double sin_value_fi = std::sin(fi_radians); // obliczenie sinusa
 
 		//Lokacja pamieci dla punktow ruchu
 		Position * pose = new Position[steps];
@@ -1165,9 +1147,9 @@ private: System::Windows::Forms::Button^ next;
 		double y_p = y_t - L * cos_value_teta * sin_value_fi;
 		double z_p = z_t - L * sin_value_fi;
 		//3,4
-		double sin_value1 = (1/(x_p*x_p + y_p*y_p))*(ee * x_p + gamma1 * y_p * sqrt(x_p*x_p + y_p*y_p - ee*ee));
-		double cos_value1 = (1/(x_p*x_p + y_p*y_p))*(ee * y_p + gamma1 * x_p * sqrt(x_p*x_p + y_p*y_p - ee*ee));
-		double fi1 = sin_value1 + cos_value1;
+		double sin_value1 = (1/((x_p*x_p) + (y_p*y_p)))*(ee * x_p + gamma1 * y_p * sqrt(x_p*x_p + y_p*y_p - ee*ee));
+		double cos_value1 = (1/((x_p*x_p) + (y_p*y_p)))*(-ee * y_p + gamma1 * x_p * sqrt(x_p*x_p + y_p*y_p - ee*ee));
+		double fi1 = sin_value1 - cos_value1;
 		//5,6
 		double sin_value5 = cos_value_teta * (sin_value_fi * cos_value1 - cos_value_fi * sin_value1);
 		double cos_value5 = gamma3 * sqrt(1 - sin_value5 * sin_value5);
@@ -1177,15 +1159,15 @@ private: System::Windows::Forms::Button^ next;
 		double cos_value234 = cos_value_teta / cos_value5 * (cos_value_fi * cos_value1 + sin_value_fi *  sin_value1);
 		double fi234 = sin_value234 - cos_value234;
 		//8
-		double x_r = x_p - L4 * sin_value1 * cos_value234;
+		double x_r = x_p - L4 * cos_value1 * cos_value234;
 		double y_r = y_p - L4 * sin_value1 * cos_value234;
 		double z_r = z_p - L4 * sin_value234;
 		//9
-		double a = -L1 + gamma1 * sqrt(x_p * x_p + y_p * y_p - ee * ee);
+		double a = -L1 + gamma1 * sqrt(x_r * x_r + y_r * y_r - ee * ee);
 		double b = (1/(2 * L2)) * (a*a + z_r*z_r + L2*L2 - L3*L3);
 		//10,11
-		double sin_value2 = (1 / (a*a - z_r*z_r)) * (z_r * b + gamma2 * a * sqrt(a*a + z_r*z_r - b*b));
-		double cos_value2 = (1 / (a*a - z_r*z_r)) * (z_r * b + gamma2 * a * sqrt(a*a + z_r*z_r - b*b));
+		double sin_value2 = (1 / (a*a + z_r*z_r)) * (z_r * b + gamma2 * a * sqrt(a*a + z_r*z_r - b*b));
+		double cos_value2 = (1 / (a*a + z_r*z_r)) * (a * b - gamma2 * z_r * sqrt(a*a + z_r*z_r - b*b));
 		double fi2 = sin_value2 - cos_value2;
 		//12
 		double sin_value3 = (gamma2 / L3) * sqrt(a * a + z_r * z_r - b * b);
@@ -1193,21 +1175,18 @@ private: System::Windows::Forms::Button^ next;
 		double fi3 = sin_value3 - cos_value3;
 		//13
 		double sin_value23 = (1 / L3) * (z_r - (L2 / (a*a + z_r*z_r) * (z_r * b + gamma2 * a * sqrt(a*a + z_r*z_r - b*b))));
-		double cos_value23 = (1 / L3) * (z_r - (L2 / (a*a + z_r*z_r) * (a * b - gamma2 * z_r * sqrt(a*a + z_r*z_r - b*b))));
+		double cos_value23 = (1 / L3) * (a - ((L2 / (a*a + z_r*z_r)) * (a * b - gamma2 * z_r * sqrt(a*a + z_r*z_r - b*b))));
 		double fi23 = sin_value23 - cos_value23;
 		//14
 		double sin_value4 = sin_value234 * cos_value23 - cos_value234 * sin_value23;
 		double cos_value4 = cos_value234 * cos_value23 + sin_value234 * sin_value23;
 		double fi4 = sin_value4 - cos_value4;
 
-		//Punkt0
-		double x0 = 0;
-		double y0 = 0;
-		double z0 = 0;
+
 		//Punkt1
-		double x1 = 0;
-		double y1 = 0;
-		double z1 = L1;
+		double x1 = L1 * cos_value1;
+		double y1 = L1 * sin_value1;
+		double z1 = 0;
 
 		//Pętla animacji
 		for (int i = 0; i < steps; i++)
@@ -1215,7 +1194,7 @@ private: System::Windows::Forms::Button^ next;
 			//point01
 			pose[i].x.p01 = x1 + d * sin_value1;
 			pose[i].y.p01 = y1 - d * cos_value1;
-			pose[i].z.p01 = z1;
+			pose[i].z.p01 = 0;
 
 			//point02
 			pose[i].x.p02 = pose[i].x.p01 + L2 * cos_value2 * cos_value1;
@@ -1275,37 +1254,35 @@ private: System::Windows::Forms::Button^ next;
 		chart1->ChartAreas[0]->AxisY->MajorGrid->Enabled = false;
 
 		//dodawanie ramion
+
 		//ramie 1
-		chart1->Series["Series1"]->Points->AddXY(x0, y0);
 		chart1->Series["Series1"]->Points->AddXY(x1, y1);
-		//polaczenie
-		chart1->Series["Series2"]->Points->AddXY(x1, y1);
-		chart1->Series["Series2"]->Points->AddXY(pose[0].x.p01, pose[0].y.p01);
+		chart1->Series["Series1"]->Points->AddXY(pose[0].x.p01, pose[0].y.p01);
 		//ramie 2
-		chart1->Series["Series3"]->Points->AddXY(pose[0].x.p01, pose[0].y.p01);
-		chart1->Series["Series3"]->Points->AddXY(pose[0].x.p02, pose[0].y.p02);
+		chart1->Series["Series2"]->Points->AddXY(pose[0].x.p01, pose[0].y.p01);
+		chart1->Series["Series2"]->Points->AddXY(pose[0].x.p02, pose[0].y.p02);
 		//ramie 3
-		chart1->Series["Series4"]->Points->AddXY(pose[0].x.p02, pose[0].y.p02);
-		chart1->Series["Series4"]->Points->AddXY(pose[0].x.p0_2, pose[0].y.p0_2);
+		chart1->Series["Series3"]->Points->AddXY(pose[0].x.p02, pose[0].y.p02);
+		chart1->Series["Series3"]->Points->AddXY(pose[0].x.p0_2, pose[0].y.p0_2);
 		//ramie 4
-		chart1->Series["Series5"]->Points->AddXY(pose[0].x.p0_2, pose[0].y.p0_2);
-		chart1->Series["Series5"]->Points->AddXY(pose[0].x.p_r, pose[0].y.p_r);
+		chart1->Series["Series4"]->Points->AddXY(pose[0].x.p0_2, pose[0].y.p0_2);
+		chart1->Series["Series4"]->Points->AddXY(pose[0].x.p_r, pose[0].y.p_r);
 		//ramie 5
-		chart1->Series["Series6"]->Points->AddXY(pose[0].x.p_r, pose[0].y.p_r);
-		chart1->Series["Series6"]->Points->AddXY(pose[0].x.p_p, pose[0].y.p_p);
+		chart1->Series["Series5"]->Points->AddXY(pose[0].x.p_r, pose[0].y.p_r);
+		chart1->Series["Series5"]->Points->AddXY(pose[0].x.p_p, pose[0].y.p_p);
 		//ramie 6
-		chart1->Series["Series7"]->Points->AddXY(pose[0].x.p_p, pose[0].y.p_p);
-		chart1->Series["Series7"]->Points->AddXY(pose[0].x.p_t, pose[0].y.p_t);
+		chart1->Series["Series6"]->Points->AddXY(pose[0].x.p_p, pose[0].y.p_p);
+		chart1->Series["Series6"]->Points->AddXY(pose[0].x.p_t, pose[0].y.p_t);
 
 		//Wykres XZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
 		// ustaw zakre osi
 		chart2->ChartAreas[0]->AxisX->Title = "X";
 		chart2->ChartAreas[0]->AxisY->Title = "Z";
-		chart2->ChartAreas[0]->AxisX->Minimum = -1500;
-		chart2->ChartAreas[0]->AxisX->Maximum = 1500;
-		chart2->ChartAreas[0]->AxisY->Minimum = -1500;
-		chart2->ChartAreas[0]->AxisY->Maximum = 1500;
+		chart2->ChartAreas[0]->AxisX->Minimum = -2000;
+		chart2->ChartAreas[0]->AxisX->Maximum = 2000;
+		chart2->ChartAreas[0]->AxisY->Minimum = -2000;
+		chart2->ChartAreas[0]->AxisY->Maximum = 2000;
 		chart2->ChartAreas[0]->AxisX->Interval = 500;
 		chart2->ChartAreas[0]->AxisY->Interval = 500;
 
@@ -1322,36 +1299,33 @@ private: System::Windows::Forms::Button^ next;
 
 		//dodawanie ramion
 		//ramie 1
-		chart2->Series["Series1"]->Points->AddXY(x0, z0);
 		chart2->Series["Series1"]->Points->AddXY(x1, z1);
-		//polaczenie
-		chart2->Series["Series2"]->Points->AddXY(x1, z1);
-		chart2->Series["Series2"]->Points->AddXY(pose[0].x.p01, pose[0].z.p01);
+		chart2->Series["Series1"]->Points->AddXY(pose[0].x.p01, pose[0].z.p01);
 		//ramie 2
-		chart2->Series["Series3"]->Points->AddXY(pose[0].x.p01, pose[0].z.p01);
-		chart2->Series["Series3"]->Points->AddXY(pose[0].x.p02, pose[0].z.p02);
+		chart2->Series["Series2"]->Points->AddXY(pose[0].x.p01, pose[0].z.p01);
+		chart2->Series["Series2"]->Points->AddXY(pose[0].x.p02, pose[0].z.p02);
 		//ramie 3
-		chart2->Series["Series4"]->Points->AddXY(pose[0].x.p02, pose[0].z.p02);
-		chart2->Series["Series4"]->Points->AddXY(pose[0].x.p0_2, pose[0].z.p0_2);
+		chart2->Series["Series3"]->Points->AddXY(pose[0].x.p02, pose[0].z.p02);
+		chart2->Series["Series3"]->Points->AddXY(pose[0].x.p0_2, pose[0].z.p0_2);
 		//ramie 4
-		chart2->Series["Series5"]->Points->AddXY(pose[0].x.p0_2, pose[0].z.p0_2);
-		chart2->Series["Series5"]->Points->AddXY(pose[0].x.p_r, pose[0].z.p_r);
+		chart2->Series["Series4"]->Points->AddXY(pose[0].x.p0_2, pose[0].z.p0_2);
+		chart2->Series["Series4"]->Points->AddXY(pose[0].x.p_r, pose[0].z.p_r);
 		//ramie 5
-		chart2->Series["Series6"]->Points->AddXY(pose[0].x.p_r, pose[0].z.p_r);
-		chart2->Series["Series6"]->Points->AddXY(pose[0].x.p_p, pose[0].z.p_p);
+		chart2->Series["Series5"]->Points->AddXY(pose[0].x.p_r, pose[0].z.p_r);
+		chart2->Series["Series5"]->Points->AddXY(pose[0].x.p_p, pose[0].z.p_p);
 		//ramie 6
-		chart2->Series["Series7"]->Points->AddXY(pose[0].x.p_p, pose[0].z.p_p);
-		chart2->Series["Series7"]->Points->AddXY(pose[0].x.p_t, pose[0].z.p_t);
+		chart2->Series["Series6"]->Points->AddXY(pose[0].x.p_p, pose[0].z.p_p);
+		chart2->Series["Series6"]->Points->AddXY(pose[0].x.p_t, pose[0].z.p_t);
 
 		//Wykres YZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
 		// ustaw zakre osi
 		chart3->ChartAreas[0]->AxisX->Title = "Y";
 		chart3->ChartAreas[0]->AxisY->Title = "Z";
-		chart3->ChartAreas[0]->AxisX->Minimum = -1500;
-		chart3->ChartAreas[0]->AxisX->Maximum = 1500;
-		chart3->ChartAreas[0]->AxisY->Minimum = -1500;
-		chart3->ChartAreas[0]->AxisY->Maximum = 1500;
+		chart3->ChartAreas[0]->AxisX->Minimum = -2000;
+		chart3->ChartAreas[0]->AxisX->Maximum = 2000;
+		chart3->ChartAreas[0]->AxisY->Minimum = -2000;
+		chart3->ChartAreas[0]->AxisY->Maximum = 2000;
 		chart3->ChartAreas[0]->AxisX->Interval = 500;
 		chart3->ChartAreas[0]->AxisY->Interval = 500;
 
@@ -1368,29 +1342,25 @@ private: System::Windows::Forms::Button^ next;
 
 		//dodawanie ramion
 		//ramie 1
-		chart3->Series["Series1"]->Points->AddXY(y0, z0);
 		chart3->Series["Series1"]->Points->AddXY(y1, z1);
-		//polaczenie
-		chart3->Series["Series2"]->Points->AddXY(y1, z1);
-		chart3->Series["Series2"]->Points->AddXY(pose[0].y.p01, pose[0].z.p01);
+		chart3->Series["Series1"]->Points->AddXY(pose[0].y.p01, pose[0].z.p01);
 		//ramie 2
-		chart3->Series["Series3"]->Points->AddXY(pose[0].y.p01, pose[0].z.p01);
-		chart3->Series["Series3"]->Points->AddXY(pose[0].y.p02, pose[0].z.p02);
+		chart3->Series["Series2"]->Points->AddXY(pose[0].y.p01, pose[0].z.p01);
+		chart3->Series["Series2"]->Points->AddXY(pose[0].y.p02, pose[0].z.p02);
 		//ramie 3
-		chart3->Series["Series4"]->Points->AddXY(pose[0].y.p02, pose[0].z.p02);
-		chart3->Series["Series4"]->Points->AddXY(pose[0].y.p0_2, pose[0].z.p0_2);
+		chart3->Series["Series3"]->Points->AddXY(pose[0].y.p02, pose[0].z.p02);
+		chart3->Series["Series3"]->Points->AddXY(pose[0].y.p0_2, pose[0].z.p0_2);
 		//ramie 4
-		chart3->Series["Series5"]->Points->AddXY(pose[0].y.p0_2, pose[0].z.p0_2);
-		chart3->Series["Series5"]->Points->AddXY(pose[0].y.p_r, pose[0].z.p_r);
+		chart3->Series["Series4"]->Points->AddXY(pose[0].y.p0_2, pose[0].z.p0_2);
+		chart3->Series["Series4"]->Points->AddXY(pose[0].y.p_r, pose[0].z.p_r);
 		//ramie 5
-		chart3->Series["Series6"]->Points->AddXY(pose[0].y.p_r, pose[0].z.p_r);
-		chart3->Series["Series6"]->Points->AddXY(pose[0].y.p_p, pose[0].z.p_p);
+		chart3->Series["Series5"]->Points->AddXY(pose[0].y.p_r, pose[0].z.p_r);
+		chart3->Series["Series5"]->Points->AddXY(pose[0].y.p_p, pose[0].z.p_p);
 		//ramie 6
-		chart3->Series["Series7"]->Points->AddXY(pose[0].y.p_p, pose[0].z.p_p);
-		chart3->Series["Series7"]->Points->AddXY(pose[0].x.p_t, pose[0].z.p_t);
-		double x = pose[0].x.p01;
+		chart3->Series["Series6"]->Points->AddXY(pose[0].y.p_p, pose[0].z.p_p);
+		chart3->Series["Series6"]->Points->AddXY(pose[0].x.p_t, pose[0].z.p_t);
 
-		next->Text = msclr::interop::marshal_as<System::String^>(std::to_string(x));
+		next->Text = msclr::interop::marshal_as<System::String^>(std::to_string(pose[0].x.p_t));
 		delete[] pose;
 		pose = NULL;
 	}

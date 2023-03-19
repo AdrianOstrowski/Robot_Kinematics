@@ -21,3 +21,4 @@ Class RobotKinematics.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     to_double(String): PrivateScope, Public, HideBySig
+    to_int(String): PrivateScope, Public, HideBySig

@@ -26,7 +26,7 @@ namespace RobotKinematics {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	
+
 
 	/// <summary>
 	/// Summary for MyForm
@@ -47,7 +47,7 @@ namespace RobotKinematics {
 			double  managed = std::stod(unmanaged);
 			return managed;
 		};
-		
+
 		int to_int(String^ tekst)
 		{
 			std::string unmanaged = msclr::interop::marshal_as<std::string>(tekst);
@@ -108,7 +108,7 @@ namespace RobotKinematics {
 	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 	private:
 	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart2;
-	public protected: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
+
 
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Label^ label21;
@@ -138,35 +138,35 @@ namespace RobotKinematics {
 	private: System::Windows::Forms::Label^ label32;
 	private: System::Windows::Forms::Label^ label30;
 	private: System::Windows::Forms::Label^ label31;
-private: System::Windows::Forms::TextBox^ machine_fi4;
-private: System::Windows::Forms::TextBox^ machine_fi5;
+	private: System::Windows::Forms::TextBox^ machine_fi4;
+	private: System::Windows::Forms::TextBox^ machine_fi5;
 
 
-private: System::Windows::Forms::TextBox^ machine_fi1;
+	private: System::Windows::Forms::TextBox^ machine_fi1;
 
 	private: System::Windows::Forms::Label^ label27;
 	private: System::Windows::Forms::Label^ label28;
 	private: System::Windows::Forms::Label^ label29;
-private: System::Windows::Forms::TextBox^ machine_fi2;
-private: System::Windows::Forms::TextBox^ machine_fi3;
+	private: System::Windows::Forms::TextBox^ machine_fi2;
+	private: System::Windows::Forms::TextBox^ machine_fi3;
 
 
 	private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::TextBox^ xT;
+	private: System::Windows::Forms::TextBox^ xT;
 
 	private: System::Windows::Forms::Label^ label24;
 	private: System::Windows::Forms::Label^ label25;
 	private: System::Windows::Forms::Label^ label26;
-private: System::Windows::Forms::TextBox^ yT;
-private: System::Windows::Forms::TextBox^ zT;
+	private: System::Windows::Forms::TextBox^ yT;
+	private: System::Windows::Forms::TextBox^ zT;
 
 
 	private: System::Windows::Forms::Label^ label33;
-private: System::Windows::Forms::TextBox^ teta;
-private: System::Windows::Forms::Button^ prev;
-private: System::Windows::Forms::Button^ next;
-private: System::Windows::Forms::TextBox^ current_step;
-private: System::Windows::Forms::Label^ current;
+	private: System::Windows::Forms::TextBox^ teta;
+	private: System::Windows::Forms::Button^ prev;
+	private: System::Windows::Forms::Button^ next;
+	private: System::Windows::Forms::TextBox^ current_step;
+	private: System::Windows::Forms::Label^ current;
 	public protected:
 
 
@@ -182,7 +182,7 @@ private: System::Windows::Forms::Label^ current;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -198,22 +198,23 @@ private: System::Windows::Forms::Label^ current;
 			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series13 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series14 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series15 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series16 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series17 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series18 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series19 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series20 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series21 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -245,7 +246,6 @@ private: System::Windows::Forms::Label^ current;
 			this->teta = (gcnew System::Windows::Forms::TextBox());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->chart4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->steps = (gcnew System::Windows::Forms::TextBox());
@@ -291,7 +291,6 @@ private: System::Windows::Forms::Label^ current;
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart4))->BeginInit();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->SuspendLayout();
@@ -302,7 +301,7 @@ private: System::Windows::Forms::Label^ current;
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button1->Location = System::Drawing::Point(272, 480);
+			this->button1->Location = System::Drawing::Point(445, 473);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(128, 68);
 			this->button1->TabIndex = 0;
@@ -431,7 +430,7 @@ private: System::Windows::Forms::Label^ current;
 			// 
 			chartArea1->Name = L"ChartArea1";
 			this->chart3->ChartAreas->Add(chartArea1);
-			this->chart3->Location = System::Drawing::Point(433, 332);
+			this->chart3->Location = System::Drawing::Point(260, 22);
 			this->chart3->Margin = System::Windows::Forms::Padding(2);
 			this->chart3->Name = L"chart3";
 			this->chart3->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
@@ -453,12 +452,17 @@ private: System::Windows::Forms::Label^ current;
 			series6->ChartArea = L"ChartArea1";
 			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
 			series6->Name = L"Series1";
+			series7->ChartArea = L"ChartArea1";
+			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+			series7->Name = L"Series7";
+			series7->YValuesPerPoint = 2;
 			this->chart3->Series->Add(series1);
 			this->chart3->Series->Add(series2);
 			this->chart3->Series->Add(series3);
 			this->chart3->Series->Add(series4);
 			this->chart3->Series->Add(series5);
 			this->chart3->Series->Add(series6);
+			this->chart3->Series->Add(series7);
 			this->chart3->Size = System::Drawing::Size(355, 295);
 			this->chart3->TabIndex = 15;
 			this->chart3->Text = L"chart1";
@@ -589,7 +593,7 @@ private: System::Windows::Forms::Label^ current;
 			this->groupBox1->Controls->Add(this->label14);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox1->Location = System::Drawing::Point(12, 61);
+			this->groupBox1->Location = System::Drawing::Point(12, 34);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(233, 264);
 			this->groupBox1->TabIndex = 29;
@@ -608,34 +612,38 @@ private: System::Windows::Forms::Label^ current;
 			// 
 			chartArea2->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea2);
-			this->chart1->Location = System::Drawing::Point(794, 332);
+			this->chart1->Location = System::Drawing::Point(636, 334);
 			this->chart1->Margin = System::Windows::Forms::Padding(2);
 			this->chart1->Name = L"chart1";
 			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
-			series7->ChartArea = L"ChartArea1";
-			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series7->Name = L"Series2";
 			series8->ChartArea = L"ChartArea1";
 			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series8->Name = L"Series3";
+			series8->Name = L"Series2";
 			series9->ChartArea = L"ChartArea1";
 			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series9->Name = L"Series4";
+			series9->Name = L"Series3";
 			series10->ChartArea = L"ChartArea1";
 			series10->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series10->Name = L"Series5";
+			series10->Name = L"Series4";
 			series11->ChartArea = L"ChartArea1";
 			series11->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series11->Name = L"Series6";
+			series11->Name = L"Series5";
 			series12->ChartArea = L"ChartArea1";
 			series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series12->Name = L"Series1";
-			this->chart1->Series->Add(series7);
+			series12->Name = L"Series6";
+			series13->ChartArea = L"ChartArea1";
+			series13->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series13->Name = L"Series1";
+			series14->ChartArea = L"ChartArea1";
+			series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+			series14->Name = L"Series7";
 			this->chart1->Series->Add(series8);
 			this->chart1->Series->Add(series9);
 			this->chart1->Series->Add(series10);
 			this->chart1->Series->Add(series11);
 			this->chart1->Series->Add(series12);
+			this->chart1->Series->Add(series13);
+			this->chart1->Series->Add(series14);
 			this->chart1->Size = System::Drawing::Size(355, 295);
 			this->chart1->TabIndex = 30;
 			this->chart1->Text = L"chart1";
@@ -645,52 +653,41 @@ private: System::Windows::Forms::Label^ current;
 			// 
 			chartArea3->Name = L"ChartArea1";
 			this->chart2->ChartAreas->Add(chartArea3);
-			this->chart2->Location = System::Drawing::Point(794, 20);
+			this->chart2->Location = System::Drawing::Point(636, 22);
 			this->chart2->Margin = System::Windows::Forms::Padding(2);
 			this->chart2->Name = L"chart2";
 			this->chart2->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
-			series13->ChartArea = L"ChartArea1";
-			series13->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series13->Name = L"Series2";
-			series14->ChartArea = L"ChartArea1";
-			series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series14->Name = L"Series3";
 			series15->ChartArea = L"ChartArea1";
 			series15->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series15->Name = L"Series4";
+			series15->Name = L"Series2";
 			series16->ChartArea = L"ChartArea1";
 			series16->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series16->Name = L"Series5";
+			series16->Name = L"Series3";
 			series17->ChartArea = L"ChartArea1";
 			series17->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series17->Name = L"Series6";
+			series17->Name = L"Series4";
 			series18->ChartArea = L"ChartArea1";
 			series18->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series18->Name = L"Series1";
-			this->chart2->Series->Add(series13);
-			this->chart2->Series->Add(series14);
+			series18->Name = L"Series5";
+			series19->ChartArea = L"ChartArea1";
+			series19->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series19->Name = L"Series6";
+			series20->ChartArea = L"ChartArea1";
+			series20->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series20->Name = L"Series1";
+			series21->ChartArea = L"ChartArea1";
+			series21->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+			series21->Name = L"Series7";
 			this->chart2->Series->Add(series15);
 			this->chart2->Series->Add(series16);
 			this->chart2->Series->Add(series17);
 			this->chart2->Series->Add(series18);
+			this->chart2->Series->Add(series19);
+			this->chart2->Series->Add(series20);
+			this->chart2->Series->Add(series21);
 			this->chart2->Size = System::Drawing::Size(355, 295);
 			this->chart2->TabIndex = 31;
 			this->chart2->Text = L"chart1";
-			// 
-			// chart4
-			// 
-			chartArea4->Name = L"ChartArea1";
-			this->chart4->ChartAreas->Add(chartArea4);
-			this->chart4->Location = System::Drawing::Point(433, 20);
-			this->chart4->Name = L"chart4";
-			series19->ChartArea = L"ChartArea1";
-			series19->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series19->Name = L"Series1";
-			series19->YValuesPerPoint = 4;
-			this->chart4->Series->Add(series19);
-			this->chart4->Size = System::Drawing::Size(355, 295);
-			this->chart4->TabIndex = 32;
-			this->chart4->Text = L"chart1";
 			// 
 			// groupBox2
 			// 
@@ -712,7 +709,7 @@ private: System::Windows::Forms::Label^ current;
 			this->groupBox2->Controls->Add(this->z_start);
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox2->Location = System::Drawing::Point(258, 61);
+			this->groupBox2->Location = System::Drawing::Point(12, 317);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(142, 310);
 			this->groupBox2->TabIndex = 33;
@@ -879,7 +876,7 @@ private: System::Windows::Forms::Label^ current;
 			this->groupBox3->Controls->Add(this->zT);
 			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox3->Location = System::Drawing::Point(13, 366);
+			this->groupBox3->Location = System::Drawing::Point(184, 382);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(232, 182);
 			this->groupBox3->TabIndex = 34;
@@ -1043,7 +1040,7 @@ private: System::Windows::Forms::Label^ current;
 			// 
 			// prev
 			// 
-			this->prev->Location = System::Drawing::Point(270, 389);
+			this->prev->Location = System::Drawing::Point(443, 382);
 			this->prev->Name = L"prev";
 			this->prev->Size = System::Drawing::Size(51, 23);
 			this->prev->TabIndex = 36;
@@ -1053,7 +1050,7 @@ private: System::Windows::Forms::Label^ current;
 			// 
 			// next
 			// 
-			this->next->Location = System::Drawing::Point(349, 389);
+			this->next->Location = System::Drawing::Point(522, 382);
 			this->next->Name = L"next";
 			this->next->Size = System::Drawing::Size(51, 23);
 			this->next->TabIndex = 37;
@@ -1063,7 +1060,7 @@ private: System::Windows::Forms::Label^ current;
 			// 
 			// current_step
 			// 
-			this->current_step->Location = System::Drawing::Point(328, 422);
+			this->current_step->Location = System::Drawing::Point(501, 415);
 			this->current_step->Name = L"current_step";
 			this->current_step->Size = System::Drawing::Size(38, 20);
 			this->current_step->TabIndex = 38;
@@ -1074,7 +1071,7 @@ private: System::Windows::Forms::Label^ current;
 			this->current->AutoSize = true;
 			this->current->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->current->Location = System::Drawing::Point(270, 425);
+			this->current->Location = System::Drawing::Point(443, 418);
 			this->current->Name = L"current";
 			this->current->Size = System::Drawing::Size(52, 13);
 			this->current->TabIndex = 39;
@@ -1084,14 +1081,13 @@ private: System::Windows::Forms::Label^ current;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1180, 639);
+			this->ClientSize = System::Drawing::Size(1006, 639);
 			this->Controls->Add(this->current);
 			this->Controls->Add(this->current_step);
 			this->Controls->Add(this->next);
 			this->Controls->Add(this->prev);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->chart4);
 			this->Controls->Add(this->chart2);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->groupBox1);
@@ -1104,7 +1100,6 @@ private: System::Windows::Forms::Label^ current;
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart4))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
@@ -1114,8 +1109,8 @@ private: System::Windows::Forms::Label^ current;
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
-	{	
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		//Wyczyszczenie wykresów
 		chart1->Series["Series1"]->Points->Clear();
 		chart1->Series["Series2"]->Points->Clear();
@@ -1123,6 +1118,7 @@ private: System::Windows::Forms::Label^ current;
 		chart1->Series["Series4"]->Points->Clear();
 		chart1->Series["Series5"]->Points->Clear();
 		chart1->Series["Series6"]->Points->Clear();
+		chart1->Series["Series7"]->Points->Clear();
 
 		chart2->Series["Series1"]->Points->Clear();
 		chart2->Series["Series2"]->Points->Clear();
@@ -1130,6 +1126,7 @@ private: System::Windows::Forms::Label^ current;
 		chart2->Series["Series4"]->Points->Clear();
 		chart2->Series["Series5"]->Points->Clear();
 		chart2->Series["Series6"]->Points->Clear();
+		chart2->Series["Series7"]->Points->Clear();
 
 		chart3->Series["Series1"]->Points->Clear();
 		chart3->Series["Series2"]->Points->Clear();
@@ -1137,6 +1134,7 @@ private: System::Windows::Forms::Label^ current;
 		chart3->Series["Series4"]->Points->Clear();
 		chart3->Series["Series5"]->Points->Clear();
 		chart3->Series["Series6"]->Points->Clear();
+		chart3->Series["Series7"]->Points->Clear();
 
 		//Zebranie danych z GUI
 		double L1 = to_double(this->L1->Text);
@@ -1179,7 +1177,12 @@ private: System::Windows::Forms::Label^ current;
 
 		//Lokacja pamieci dla punktow ruchu
 		Position* pose = new Position[steps + 1];
-		
+		double* fi1 = new double[steps + 1];
+		double* fi2 = new double[steps + 1];
+		double* fi3 = new double[steps + 1];
+		double* fi4 = new double[steps + 1];
+		double* fi5 = new double[steps + 1];
+
 		//Move
 		double x_m, y_m, z_m;
 		x_m = (x_end - x_start) / (steps);
@@ -1203,13 +1206,11 @@ private: System::Windows::Forms::Label^ current;
 			//3,4
 			double sin_value1 = (1 / ((x_p * x_p) + (y_p * y_p))) * (ee * x_p + gamma1 * y_p * sqrt(x_p * x_p + y_p * y_p - ee * ee));
 			double cos_value1 = (1 / ((x_p * x_p) + (y_p * y_p))) * (-ee * y_p + gamma1 * x_p * sqrt(x_p * x_p + y_p * y_p - ee * ee));
-			double fi1_r = asin(sin_value1);
-			double fi1 = fi1_r * 180.0 / M_PI;
+			fi1[i] = asin(sin_value1) * 180.0 / M_PI;
 			//5,6
 			double sin_value5 = cos_value_teta * (sin_value_fi * cos_value1 - cos_value_fi * sin_value1);
 			double cos_value5 = gamma3 * sqrt(1 - sin_value5 * sin_value5);
-			double fi5_r = asin(sin_value5);
-			double fi5 = fi5_r * 180.0 / M_PI;
+			fi5[i] = asin(sin_value5) * 180.0 / M_PI;
 			//7
 			double sin_value234 = sin_value_teta / cos_value5;
 			double cos_value234 = cos_value_teta / cos_value5 * (cos_value_fi * cos_value1 + sin_value_fi * sin_value1);
@@ -1225,13 +1226,11 @@ private: System::Windows::Forms::Label^ current;
 			//10,11
 			double sin_value2 = (1 / (a * a + z_r * z_r)) * (z_r * b + gamma2 * a * sqrt(a * a + z_r * z_r - b * b));
 			double cos_value2 = (1 / (a * a + z_r * z_r)) * (a * b - gamma2 * z_r * sqrt(a * a + z_r * z_r - b * b));
-			double fi2_r = asin(sin_value2);
-			double fi2 = fi2_r * 180.0 / M_PI;
+			fi2[i] = asin(sin_value2) * 180.0 / M_PI;
 			//12
 			double sin_value3 = (gamma2 / L3) * sqrt(a * a + z_r * z_r - b * b);
 			double cos_value3 = (b - L2) / L3;
-			double fi3_r = asin(sin_value3);
-			double fi3 = fi3_r * 180.0 / M_PI;
+			fi3[i] = asin(sin_value3) * 180.0 / M_PI;
 			//13
 			double sin_value23 = (1 / L3) * (z_r - (L2 / (a * a + z_r * z_r) * (z_r * b + gamma2 * a * sqrt(a * a + z_r * z_r - b * b))));
 			double cos_value23 = (1 / L3) * (a - ((L2 / (a * a + z_r * z_r)) * (a * b - gamma2 * z_r * sqrt(a * a + z_r * z_r - b * b))));
@@ -1240,20 +1239,8 @@ private: System::Windows::Forms::Label^ current;
 			//14
 			double sin_value4 = sin_value234 * cos_value23 - cos_value234 * sin_value23;
 			double cos_value4 = cos_value234 * cos_value23 + sin_value234 * sin_value23;
-			double fi4_r = asin(sin_value4);
-			double fi4 = fi4_r * 180.0 / M_PI;
+			fi4[i] = asin(sin_value4) * 180.0 / M_PI;
 
-			//Machine coordinates
-			String^ phi1 = System::Convert::ToString(fi1);
-			machine_fi1->Text = phi1;
-			String^ phi2 = System::Convert::ToString(fi2);
-			machine_fi2->Text = phi2;
-			String^ phi3 = System::Convert::ToString(fi3);
-			machine_fi3->Text = phi3;
-			String^ phi4 = System::Convert::ToString(fi4);
-			machine_fi4->Text = phi4;
-			String^ phi5 = System::Convert::ToString(fi5);
-			machine_fi5->Text = phi5;
 
 			//Punkt1
 			x1 = L1 * cos_value1;
@@ -1265,30 +1252,60 @@ private: System::Windows::Forms::Label^ current;
 			pose[i].y.p01 = y1 - d * cos_value1;
 			pose[i].z.p01 = 0;
 
+			if (isnan(pose[i].x.p01) || isnan(pose[i].y.p01) || isnan(pose[i].z.p01)) {
+				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				break;
+			};
+
 			//point02
 			pose[i].x.p02 = pose[i].x.p01 + L2 * cos_value2 * cos_value1;
 			pose[i].y.p02 = pose[i].y.p01 + L2 * cos_value2 * sin_value1;
 			pose[i].z.p02 = L2 * sin_value2;
+
+			if (isnan(pose[i].x.p02) || isnan(pose[i].y.p02) || isnan(pose[i].z.p02)) {
+				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				break;
+			};
 
 			//point0_2
 			pose[i].x.p0_2 = pose[i].x.p02 - (d - ee) * sin_value1;
 			pose[i].y.p0_2 = pose[i].y.p02 + (d - ee) * cos_value1;
 			pose[i].z.p0_2 = pose[i].z.p02;
 
+			if (isnan(pose[i].x.p0_2) || isnan(pose[i].y.p0_2) || isnan(pose[i].z.p0_2)) {
+				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				break;
+			};
+
 			//point02
 			pose[i].x.p_r = pose[i].x.p0_2 + L3 * cos_value1 * cos_value23;
 			pose[i].y.p_r = pose[i].y.p0_2 + L3 * sin_value1 * cos_value23;
 			pose[i].z.p_r = pose[i].z.p0_2 + L3 * sin_value23;
+
+			if (isnan(pose[i].x.p_r) || isnan(pose[i].y.p_r) || isnan(pose[i].z.p_r)) {
+				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				break;
+			};
 
 			//point_p
 			pose[i].x.p_p = pose[i].x.p_r + L4 * cos_value1 * cos_value234;
 			pose[i].y.p_p = pose[i].y.p_r + L4 * sin_value1 * cos_value234;
 			pose[i].z.p_p = pose[i].z.p_r + L4 * sin_value234;
 
+			if (isnan(pose[i].x.p_p) || isnan(pose[i].y.p_p) || isnan(pose[i].z.p_p)) {
+				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				break;
+			};
+
 			//pointp
 			pose[i].x.p_t = pose[i].x.p_p + L * cos_value_teta * cos_value_fi;
 			pose[i].y.p_t = pose[i].y.p_p + L * cos_value_teta * sin_value_fi;
 			pose[i].z.p_t = pose[i].z.p_p + L * sin_value_fi;
+
+			if (isnan(pose[i].x.p_t) || isnan(pose[i].y.p_t) || isnan(pose[i].z.p_t)) {
+				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				break;
+			};
 		};
 
 		////Displaying TCP value
@@ -1299,6 +1316,18 @@ private: System::Windows::Forms::Label^ current;
 		String^ zt = System::Convert::ToString(pose[current_step].z.p_t);
 		this->zT->Text = zt;
 
+		//Displaying Machine coordinates
+		String^ phi1 = System::Convert::ToString(fi1[current_step]);
+		machine_fi1->Text = phi1;
+		String^ phi2 = System::Convert::ToString(fi2[current_step]);
+		machine_fi2->Text = phi2;
+		String^ phi3 = System::Convert::ToString(fi3[current_step]);
+		machine_fi3->Text = phi3;
+		String^ phi4 = System::Convert::ToString(fi4[current_step]);
+		machine_fi4->Text = phi4;
+		String^ phi5 = System::Convert::ToString(fi5[current_step]);
+		machine_fi5->Text = phi5;
+
 		//Wykres XY/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
 		// ustaw zakre osi
@@ -1308,8 +1337,8 @@ private: System::Windows::Forms::Label^ current;
 		chart1->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L);
 		chart1->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L);
 		chart1->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L);
-		chart1->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L)/2;
-		chart1->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L)/2;
+		chart1->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 2;
+		chart1->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 2;
 
 		// ustaw marginesy wyświetlania
 		chart1->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1341,6 +1370,7 @@ private: System::Windows::Forms::Label^ current;
 		//ramie 6
 		chart1->Series["Series6"]->Points->AddXY(pose[current_step].x.p_p, pose[current_step].y.p_p);
 		chart1->Series["Series6"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].y.p_t);
+		chart1->Series["Series7"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].y.p_t);
 
 		//Wykres XZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
@@ -1351,8 +1381,8 @@ private: System::Windows::Forms::Label^ current;
 		chart2->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L);
 		chart2->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L);
 		chart2->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L);
-		chart2->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L)/2;
-		chart2->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L)/2;
+		chart2->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 2;
+		chart2->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 2;
 
 		// ustaw marginesy wyświetlania
 		chart2->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1384,6 +1414,7 @@ private: System::Windows::Forms::Label^ current;
 		//ramie 6
 		chart2->Series["Series6"]->Points->AddXY(pose[current_step].x.p_p, pose[current_step].z.p_p);
 		chart2->Series["Series6"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
+		chart2->Series["Series7"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
 
 		//Wykres YZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
@@ -1427,46 +1458,56 @@ private: System::Windows::Forms::Label^ current;
 		//ramie 6
 		chart3->Series["Series6"]->Points->AddXY(pose[current_step].y.p_p, pose[current_step].z.p_p);
 		chart3->Series["Series6"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
+		chart3->Series["Series7"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
 
 		delete[] pose;
 		pose = NULL;
+		delete[] fi1;
+		fi1 = NULL;
+		delete[] fi2;
+		fi2 = NULL;
+		delete[] fi3;
+		fi3 = NULL;
+		delete[] fi4;
+		fi4 = NULL;
+		delete[] fi5;
+		fi5 = NULL;
 	}
 
-private: System::Void next_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	int steps = to_int(this->steps->Text);
-	int current_step = to_int(this->current_step->Text);
+	private: System::Void next_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	if (current_step < steps)
-	{
-		current_step++;
+		int steps = to_int(this->steps->Text);
+		int current_step = to_int(this->current_step->Text);
+
+		if (current_step < steps)
+		{
+			current_step++;
+		}
+		else
+		{
+			MessageBox::Show("No more positions generated", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		};
+
+		String^ current = System::Convert::ToString(current_step);
+		this->current_step->Text = current;
 	}
-	else
-	{
-		MessageBox::Show("No more positions generated", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-	};
-	
-	String^ current = System::Convert::ToString(current_step);
-	this->current_step->Text = current;
-}
 
-private: System::Void prev_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	int steps = to_int(this->steps->Text);
-	int current_step = to_int(this->current_step->Text);
+	private: System::Void prev_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	if (current_step > 0)
-	{
-		current_step--;
+		int steps = to_int(this->steps->Text);
+		int current_step = to_int(this->current_step->Text);
+
+		if (current_step > 0)
+		{
+			current_step--;
+		}
+		else
+		{
+			MessageBox::Show("Number can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		};
+
+		String^ current = System::Convert::ToString(current_step);
+		this->current_step->Text = current;
 	}
-	else
-	{
-		MessageBox::Show("Number can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-	};
-
-	String^ current = System::Convert::ToString(current_step);
-	this->current_step->Text = current;
-}
-
 };
 };

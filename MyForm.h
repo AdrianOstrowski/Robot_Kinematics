@@ -167,6 +167,11 @@ namespace RobotKinematics {
 	private: System::Windows::Forms::Button^ next;
 	private: System::Windows::Forms::TextBox^ current_step;
 	private: System::Windows::Forms::Label^ current;
+private: System::Windows::Forms::TabControl^ Charts;
+
+private: System::Windows::Forms::TabPage^ tabPage1;
+private: System::Windows::Forms::TabPage^ tabPage2;
+private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 	public protected:
 
 
@@ -199,22 +204,32 @@ namespace RobotKinematics {
 			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series13 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series14 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series15 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series16 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series17 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series18 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series19 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series20 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series21 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series22 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series23 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series24 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series25 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series26 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series27 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series28 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series29 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -287,12 +302,20 @@ namespace RobotKinematics {
 			this->next = (gcnew System::Windows::Forms::Button());
 			this->current_step = (gcnew System::Windows::Forms::TextBox());
 			this->current = (gcnew System::Windows::Forms::Label());
+			this->Charts = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->chart4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
+			this->Charts->SuspendLayout();
+			this->tabPage1->SuspendLayout();
+			this->tabPage2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart4))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -301,7 +324,7 @@ namespace RobotKinematics {
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button1->Location = System::Drawing::Point(445, 473);
+			this->button1->Location = System::Drawing::Point(438, 449);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(128, 68);
 			this->button1->TabIndex = 0;
@@ -430,7 +453,7 @@ namespace RobotKinematics {
 			// 
 			chartArea1->Name = L"ChartArea1";
 			this->chart3->ChartAreas->Add(chartArea1);
-			this->chart3->Location = System::Drawing::Point(260, 22);
+			this->chart3->Location = System::Drawing::Point(285, 16);
 			this->chart3->Margin = System::Windows::Forms::Padding(2);
 			this->chart3->Name = L"chart3";
 			this->chart3->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
@@ -456,6 +479,9 @@ namespace RobotKinematics {
 			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series7->Name = L"Series7";
 			series7->YValuesPerPoint = 2;
+			series8->ChartArea = L"ChartArea1";
+			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series8->Name = L"Trajectory";
 			this->chart3->Series->Add(series1);
 			this->chart3->Series->Add(series2);
 			this->chart3->Series->Add(series3);
@@ -463,6 +489,7 @@ namespace RobotKinematics {
 			this->chart3->Series->Add(series5);
 			this->chart3->Series->Add(series6);
 			this->chart3->Series->Add(series7);
+			this->chart3->Series->Add(series8);
 			this->chart3->Size = System::Drawing::Size(355, 295);
 			this->chart3->TabIndex = 15;
 			this->chart3->Text = L"chart1";
@@ -593,7 +620,7 @@ namespace RobotKinematics {
 			this->groupBox1->Controls->Add(this->label14);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox1->Location = System::Drawing::Point(12, 34);
+			this->groupBox1->Location = System::Drawing::Point(21, 16);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(233, 264);
 			this->groupBox1->TabIndex = 29;
@@ -612,38 +639,42 @@ namespace RobotKinematics {
 			// 
 			chartArea2->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea2);
-			this->chart1->Location = System::Drawing::Point(636, 334);
+			this->chart1->Location = System::Drawing::Point(644, 311);
 			this->chart1->Margin = System::Windows::Forms::Padding(2);
 			this->chart1->Name = L"chart1";
 			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
-			series8->ChartArea = L"ChartArea1";
-			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series8->Name = L"Series2";
 			series9->ChartArea = L"ChartArea1";
 			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series9->Name = L"Series3";
+			series9->Name = L"Series2";
 			series10->ChartArea = L"ChartArea1";
 			series10->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series10->Name = L"Series4";
+			series10->Name = L"Series3";
 			series11->ChartArea = L"ChartArea1";
 			series11->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series11->Name = L"Series5";
+			series11->Name = L"Series4";
 			series12->ChartArea = L"ChartArea1";
 			series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series12->Name = L"Series6";
+			series12->Name = L"Series5";
 			series13->ChartArea = L"ChartArea1";
 			series13->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series13->Name = L"Series1";
+			series13->Name = L"Series6";
 			series14->ChartArea = L"ChartArea1";
-			series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-			series14->Name = L"Series7";
-			this->chart1->Series->Add(series8);
+			series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series14->Name = L"Series1";
+			series15->ChartArea = L"ChartArea1";
+			series15->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+			series15->Name = L"Series7";
+			series16->ChartArea = L"ChartArea1";
+			series16->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series16->Name = L"Trajectory";
 			this->chart1->Series->Add(series9);
 			this->chart1->Series->Add(series10);
 			this->chart1->Series->Add(series11);
 			this->chart1->Series->Add(series12);
 			this->chart1->Series->Add(series13);
 			this->chart1->Series->Add(series14);
+			this->chart1->Series->Add(series15);
+			this->chart1->Series->Add(series16);
 			this->chart1->Size = System::Drawing::Size(355, 295);
 			this->chart1->TabIndex = 30;
 			this->chart1->Text = L"chart1";
@@ -653,38 +684,42 @@ namespace RobotKinematics {
 			// 
 			chartArea3->Name = L"ChartArea1";
 			this->chart2->ChartAreas->Add(chartArea3);
-			this->chart2->Location = System::Drawing::Point(636, 22);
+			this->chart2->Location = System::Drawing::Point(644, 16);
 			this->chart2->Margin = System::Windows::Forms::Padding(2);
 			this->chart2->Name = L"chart2";
 			this->chart2->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SemiTransparent;
-			series15->ChartArea = L"ChartArea1";
-			series15->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series15->Name = L"Series2";
-			series16->ChartArea = L"ChartArea1";
-			series16->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series16->Name = L"Series3";
 			series17->ChartArea = L"ChartArea1";
 			series17->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series17->Name = L"Series4";
+			series17->Name = L"Series2";
 			series18->ChartArea = L"ChartArea1";
 			series18->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series18->Name = L"Series5";
+			series18->Name = L"Series3";
 			series19->ChartArea = L"ChartArea1";
 			series19->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series19->Name = L"Series6";
+			series19->Name = L"Series4";
 			series20->ChartArea = L"ChartArea1";
 			series20->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series20->Name = L"Series1";
+			series20->Name = L"Series5";
 			series21->ChartArea = L"ChartArea1";
-			series21->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-			series21->Name = L"Series7";
-			this->chart2->Series->Add(series15);
-			this->chart2->Series->Add(series16);
+			series21->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series21->Name = L"Series6";
+			series22->ChartArea = L"ChartArea1";
+			series22->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series22->Name = L"Series1";
+			series23->ChartArea = L"ChartArea1";
+			series23->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+			series23->Name = L"Series7";
+			series24->ChartArea = L"ChartArea1";
+			series24->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series24->Name = L"Trajectory";
 			this->chart2->Series->Add(series17);
 			this->chart2->Series->Add(series18);
 			this->chart2->Series->Add(series19);
 			this->chart2->Series->Add(series20);
 			this->chart2->Series->Add(series21);
+			this->chart2->Series->Add(series22);
+			this->chart2->Series->Add(series23);
+			this->chart2->Series->Add(series24);
 			this->chart2->Size = System::Drawing::Size(355, 295);
 			this->chart2->TabIndex = 31;
 			this->chart2->Text = L"chart1";
@@ -709,7 +744,7 @@ namespace RobotKinematics {
 			this->groupBox2->Controls->Add(this->z_start);
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox2->Location = System::Drawing::Point(12, 317);
+			this->groupBox2->Location = System::Drawing::Point(21, 289);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(142, 310);
 			this->groupBox2->TabIndex = 33;
@@ -876,7 +911,7 @@ namespace RobotKinematics {
 			this->groupBox3->Controls->Add(this->zT);
 			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox3->Location = System::Drawing::Point(184, 382);
+			this->groupBox3->Location = System::Drawing::Point(182, 345);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(232, 182);
 			this->groupBox3->TabIndex = 34;
@@ -1040,7 +1075,7 @@ namespace RobotKinematics {
 			// 
 			// prev
 			// 
-			this->prev->Location = System::Drawing::Point(443, 382);
+			this->prev->Location = System::Drawing::Point(436, 358);
 			this->prev->Name = L"prev";
 			this->prev->Size = System::Drawing::Size(51, 23);
 			this->prev->TabIndex = 36;
@@ -1050,7 +1085,7 @@ namespace RobotKinematics {
 			// 
 			// next
 			// 
-			this->next->Location = System::Drawing::Point(522, 382);
+			this->next->Location = System::Drawing::Point(515, 358);
 			this->next->Name = L"next";
 			this->next->Size = System::Drawing::Size(51, 23);
 			this->next->TabIndex = 37;
@@ -1060,7 +1095,7 @@ namespace RobotKinematics {
 			// 
 			// current_step
 			// 
-			this->current_step->Location = System::Drawing::Point(501, 415);
+			this->current_step->Location = System::Drawing::Point(494, 391);
 			this->current_step->Name = L"current_step";
 			this->current_step->Size = System::Drawing::Size(38, 20);
 			this->current_step->TabIndex = 38;
@@ -1071,28 +1106,97 @@ namespace RobotKinematics {
 			this->current->AutoSize = true;
 			this->current->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->current->Location = System::Drawing::Point(443, 418);
+			this->current->Location = System::Drawing::Point(436, 394);
 			this->current->Name = L"current";
 			this->current->Size = System::Drawing::Size(52, 13);
 			this->current->TabIndex = 39;
 			this->current->Text = L"Current:";
 			// 
+			// Charts
+			// 
+			this->Charts->Controls->Add(this->tabPage1);
+			this->Charts->Controls->Add(this->tabPage2);
+			this->Charts->Location = System::Drawing::Point(3, 2);
+			this->Charts->Name = L"Charts";
+			this->Charts->SelectedIndex = 0;
+			this->Charts->Size = System::Drawing::Size(1036, 634);
+			this->Charts->TabIndex = 40;
+			// 
+			// tabPage1
+			// 
+			this->tabPage1->Controls->Add(this->groupBox1);
+			this->tabPage1->Controls->Add(this->groupBox2);
+			this->tabPage1->Controls->Add(this->current);
+			this->tabPage1->Controls->Add(this->chart3);
+			this->tabPage1->Controls->Add(this->current_step);
+			this->tabPage1->Controls->Add(this->chart2);
+			this->tabPage1->Controls->Add(this->next);
+			this->tabPage1->Controls->Add(this->chart1);
+			this->tabPage1->Controls->Add(this->prev);
+			this->tabPage1->Controls->Add(this->groupBox3);
+			this->tabPage1->Controls->Add(this->button1);
+			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Name = L"tabPage1";
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(1028, 608);
+			this->tabPage1->TabIndex = 0;
+			this->tabPage1->Text = L"Main";
+			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->Controls->Add(this->chart4);
+			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1028, 608);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"Machine Coordinates";
+			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// chart4
+			// 
+			chartArea4->Name = L"ChartArea1";
+			this->chart4->ChartAreas->Add(chartArea4);
+			legend1->Name = L"Legend1";
+			this->chart4->Legends->Add(legend1);
+			this->chart4->Location = System::Drawing::Point(6, 6);
+			this->chart4->Name = L"chart4";
+			series25->ChartArea = L"ChartArea1";
+			series25->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series25->Legend = L"Legend1";
+			series25->Name = L"fi1";
+			series26->ChartArea = L"ChartArea1";
+			series26->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series26->Legend = L"Legend1";
+			series26->Name = L"fi2";
+			series27->ChartArea = L"ChartArea1";
+			series27->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series27->Legend = L"Legend1";
+			series27->Name = L"fi3";
+			series28->ChartArea = L"ChartArea1";
+			series28->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series28->Legend = L"Legend1";
+			series28->Name = L"fi4";
+			series29->ChartArea = L"ChartArea1";
+			series29->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series29->Legend = L"Legend1";
+			series29->Name = L"fi5";
+			this->chart4->Series->Add(series25);
+			this->chart4->Series->Add(series26);
+			this->chart4->Series->Add(series27);
+			this->chart4->Series->Add(series28);
+			this->chart4->Series->Add(series29);
+			this->chart4->Size = System::Drawing::Size(977, 597);
+			this->chart4->TabIndex = 0;
+			this->chart4->Text = L"chart4";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1006, 639);
-			this->Controls->Add(this->current);
-			this->Controls->Add(this->current_step);
-			this->Controls->Add(this->next);
-			this->Controls->Add(this->prev);
-			this->Controls->Add(this->groupBox3);
-			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->chart2);
-			this->Controls->Add(this->chart1);
-			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->chart3);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(1041, 639);
+			this->Controls->Add(this->Charts);
 			this->Name = L"MyForm";
 			this->Text = L" ";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->EndInit();
@@ -1104,14 +1208,23 @@ namespace RobotKinematics {
 			this->groupBox2->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
+			this->Charts->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
+			this->tabPage2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart4))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		//Wyczyszczenie wykresów
+		chart4->Series["fi1"]->Points->Clear();
+		chart4->Series["fi2"]->Points->Clear();
+		chart4->Series["fi3"]->Points->Clear();
+		chart4->Series["fi4"]->Points->Clear();
+		chart4->Series["fi5"]->Points->Clear();
 		chart1->Series["Series1"]->Points->Clear();
 		chart1->Series["Series2"]->Points->Clear();
 		chart1->Series["Series3"]->Points->Clear();
@@ -1333,12 +1446,12 @@ namespace RobotKinematics {
 		// ustaw zakre osi
 		chart1->ChartAreas[0]->AxisX->Title = "X";
 		chart1->ChartAreas[0]->AxisY->Title = "Y";
-		chart1->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L);
-		chart1->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L);
-		chart1->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L);
-		chart1->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L);
-		chart1->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 2;
-		chart1->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 2;
+		chart1->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L)/2;
+		chart1->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L)/2;
+		chart1->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L)/2;
+		chart1->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L)/2;
+		chart1->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 4;
+		chart1->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 4;
 
 		// ustaw marginesy wyświetlania
 		chart1->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1377,12 +1490,12 @@ namespace RobotKinematics {
 		// ustaw zakre osi
 		chart2->ChartAreas[0]->AxisX->Title = "X";
 		chart2->ChartAreas[0]->AxisY->Title = "Z";
-		chart2->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L);
-		chart2->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L);
-		chart2->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L);
-		chart2->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L);
-		chart2->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 2;
-		chart2->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 2;
+		chart2->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L)/2;
+		chart2->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L)/2;
+		chart2->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L)/2;
+		chart2->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L)/2;
+		chart2->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 4;
+		chart2->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 4;
 
 		// ustaw marginesy wyświetlania
 		chart2->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1421,12 +1534,12 @@ namespace RobotKinematics {
 		// ustaw zakre osi
 		chart3->ChartAreas[0]->AxisX->Title = "Y";
 		chart3->ChartAreas[0]->AxisY->Title = "Z";
-		chart3->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L);
-		chart3->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L);
-		chart3->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L);
-		chart3->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L);
-		chart3->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 2;
-		chart3->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 2;
+		chart3->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L)/2;
+		chart3->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L)/2;
+		chart3->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L)/2;
+		chart3->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L)/2;
+		chart3->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 4;
+		chart3->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 4;
 
 		// ustaw marginesy wyświetlania
 		chart3->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1460,6 +1573,16 @@ namespace RobotKinematics {
 		chart3->Series["Series6"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
 		chart3->Series["Series7"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
 
+		//chart fi
+		for (int i = 0; i < steps; i++)
+		{
+			chart4->Series["fi1"]->Points->AddXY(i, fi1[i]);
+			chart4->Series["fi2"]->Points->AddXY(i, fi2[i]);
+			chart4->Series["fi3"]->Points->AddXY(i, fi3[i]);
+			chart4->Series["fi4"]->Points->AddXY(i, fi4[i]);
+			chart4->Series["fi5"]->Points->AddXY(i, fi5[i]);
+		};
+
 		delete[] pose;
 		pose = NULL;
 		delete[] fi1;
@@ -1490,6 +1613,7 @@ namespace RobotKinematics {
 
 		String^ current = System::Convert::ToString(current_step);
 		this->current_step->Text = current;
+
 	}
 
 	private: System::Void prev_Click(System::Object^ sender, System::EventArgs^ e) {

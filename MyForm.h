@@ -1251,15 +1251,45 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 
 		//Zebranie danych z GUI
 		double L1 = to_double(this->L1->Text);
+		if (L1 <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double L2 = to_double(this->L2->Text);
+		if (L2 <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double L3 = to_double(this->L3->Text);
+		if (L3 <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double L4 = to_double(this->L4->Text);
+		if (L4 <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double L5 = to_double(this->L5->Text);
+		if (L5 <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double L6 = to_double(this->L6->Text);
+		if (L6 <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double d = to_double(this->d->Text);
+		if (d <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double ee = to_double(this->e->Text);
+		if (ee <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double teta = to_double(this->teta->Text);
+		if (teta <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double fi = to_double(this->fi->Text);
+		if (fi <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double gamma1 = to_double(this->gamma1->Text);
 		double gamma2 = to_double(this->gamma2->Text);
 		double gamma3 = to_double(this->gamma3->Text);
@@ -1270,7 +1300,13 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 		double y_end = to_double(this->y_end->Text);
 		double z_end = to_double(this->z_end->Text);
 		int steps = to_int(this->steps->Text);
+		if (steps <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		double L = L5 + L6;
+		if (L <= 0) {
+			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		int current_step = to_int(this->current_step->Text);
 
 		if (steps < current_step)

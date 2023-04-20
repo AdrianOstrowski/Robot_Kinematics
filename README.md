@@ -10,3 +10,5 @@ Additional objectives to be realized were:
 -selecting the coordinates of the start and end points of the movement.
 
 The visualization was also to be divided into equidistant points, allowing the user to observe the subsequent stages of the displacement simulation.
+
+To run the program, user needs to downolad all files, open x64/debug/robot_kinematics.exe

@@ -1,32 +1,7 @@
 ﻿#pragma once
-#include <string>
-#include <msclr\marshal_cppstd.h>
-#include <numeric>
-#include <algorithm>
-#include <vector>
-#include <cmath>
-
-#define M_PI 3.14159265358979323846
-
-//Struktury do animacji
-struct Axi {
-	double p01, p02, p0_2, p_r, p_p, p_t;
-};
-struct Position {
-	Axi x;
-	Axi y;
-	Axi z;
-};
+#include "Calculations.h";
 
 namespace RobotKinematics {
-
-	using namespace System;
-	using namespace System::ComponentModel;
-	using namespace System::Collections;
-	using namespace System::Windows::Forms;
-	using namespace System::Data;
-	using namespace System::Drawing;
-
 
 	/// <summary>
 	/// Summary for MyForm
@@ -41,19 +16,6 @@ namespace RobotKinematics {
 			//TODO: Add the constructor code here
 			//
 		}
-		double to_double(String^ tekst)
-		{
-			std::string unmanaged = msclr::interop::marshal_as<std::string>(tekst);
-			double  managed = std::stod(unmanaged);
-			return managed;
-		};
-
-		int to_int(String^ tekst)
-		{
-			std::string unmanaged = msclr::interop::marshal_as<std::string>(tekst);
-			int  managed = std::stod(unmanaged);
-			return managed;
-		};
 
 	protected:
 		/// <summary>
@@ -1219,12 +1181,29 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		Calculations calculation(this->L1->Text,
+			this->L2->Text, 
+			this->L3->Text, 
+			this->L4->Text, 
+			this->L5->Text, 
+			this->L6->Text, 
+			this->d->Text, 
+			this->e->Text, 
+			this->teta->Text, 
+			this->fi->Text, 
+			this->gamma1->Text, 
+			this->gamma2->Text, 
+			this->gamma3->Text, 
+			this->x_start->Text, 
+			this->y_start->Text, 
+			this->z_start->Text, 
+			this->x_end->Text, 
+			this->y_end->Text, 
+			this->z_end->Text, 
+			this->steps->Text, 
+			this->current_step->Text);
+		calculation.calculate();
 		//Wyczyszczenie wykresów
-		chart4->Series["fi1"]->Points->Clear();
-		chart4->Series["fi2"]->Points->Clear();
-		chart4->Series["fi3"]->Points->Clear();
-		chart4->Series["fi4"]->Points->Clear();
-		chart4->Series["fi5"]->Points->Clear();
 		chart1->Series["Series1"]->Points->Clear();
 		chart1->Series["Series2"]->Points->Clear();
 		chart1->Series["Series3"]->Points->Clear();
@@ -1249,232 +1228,49 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 		chart3->Series["Series6"]->Points->Clear();
 		chart3->Series["Series7"]->Points->Clear();
 
-		//Zebranie danych z GUI
-		double L1 = to_double(this->L1->Text);
-		if (L1 <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double L2 = to_double(this->L2->Text);
-		if (L2 <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double L3 = to_double(this->L3->Text);
-		if (L3 <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double L4 = to_double(this->L4->Text);
-		if (L4 <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double L5 = to_double(this->L5->Text);
-		if (L5 <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double L6 = to_double(this->L6->Text);
-		if (L6 <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double d = to_double(this->d->Text);
-		if (d <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double ee = to_double(this->e->Text);
-		if (ee <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double teta = to_double(this->teta->Text);
-		if (teta <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double fi = to_double(this->fi->Text);
-		if (fi <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double gamma1 = to_double(this->gamma1->Text);
-		double gamma2 = to_double(this->gamma2->Text);
-		double gamma3 = to_double(this->gamma3->Text);
-		double x_start = to_double(this->x_start->Text);
-		double y_start = to_double(this->y_start->Text);
-		double z_start = to_double(this->z_start->Text);
-		double x_end = to_double(this->x_end->Text);
-		double y_end = to_double(this->y_end->Text);
-		double z_end = to_double(this->z_end->Text);
-		int steps = to_int(this->steps->Text);
-		if (steps <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		double L = L5 + L6;
-		if (L <= 0) {
-			MessageBox::Show("Value can't be less than 0", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		int current_step = to_int(this->current_step->Text);
+		chart4->Series["fi1"]->Points->Clear();
+		chart4->Series["fi2"]->Points->Clear();
+		chart4->Series["fi3"]->Points->Clear();
+		chart4->Series["fi4"]->Points->Clear();
+		chart4->Series["fi5"]->Points->Clear();
 
-		if (steps < current_step)
+		int current_step = calculation.change_step(calculation.to_int(this->current_step->Text));
+
+		if (calculation.to_int(this->steps->Text) < current_step)
 		{
 			String^ current = L"0";
 			this->current_step->Text = current;
-			current_step = to_int(this->current_step->Text);
 		};
 
-		//sin and cos
-		double teta_radians = teta * M_PI / 180.0;
-		double fi_radians = fi * M_PI / 180.0;
-		double cos_value_teta = std::cos(teta_radians); // obliczenie cosinusa
-		double sin_value_teta = std::sin(teta_radians); // obliczenie sinusa
-		double cos_value_fi = std::cos(fi_radians); // obliczenie cosinusa
-		double sin_value_fi = std::sin(fi_radians); // obliczenie sinusa
+		Position pose = calculation.get_pose();
+		double fi1 = calculation.get_fi1(current_step);
+		double fi2 = calculation.get_fi2(current_step);
+		double fi3 = calculation.get_fi3(current_step);
+		double fi4 = calculation.get_fi4(current_step);
+		double fi5 = calculation.get_fi5(current_step);
+		double x1 = calculation.get_x();
+		double y1 = calculation.get_y();
+		double z1 = calculation.get_z();
 
-		//Lokacja pamieci dla punktow ruchu
-		Position* pose = new Position[steps + 1];
-		double* fi1 = new double[steps + 1];
-		double* fi2 = new double[steps + 1];
-		double* fi3 = new double[steps + 1];
-		double* fi4 = new double[steps + 1];
-		double* fi5 = new double[steps + 1];
-
-		//Move
-		double x_m, y_m, z_m;
-		x_m = (x_end - x_start) / (steps);
-		y_m = (y_end - y_start) / (steps);
-		z_m = (z_end - z_start) / (steps);
-
-		//Punkt1
-		double x1, y1, z1;
-		//Pętla animacji
-		for (int i = 0; i <= steps; i++)
-		{
-			//Sekwencja obliczeniowa dla kinematyki odwrotnej
-			//1
-			double x_t = x_start + i * x_m;
-			double y_t = y_start + i * y_m;
-			double z_t = z_start + i * z_m;
-			//2
-			double x_p = x_t - L * cos_value_teta * cos_value_fi;
-			double y_p = y_t - L * cos_value_teta * sin_value_fi;
-			double z_p = z_t - L * sin_value_fi;
-			//3,4
-			double sin_value1 = (1 / ((x_p * x_p) + (y_p * y_p))) * (ee * x_p + gamma1 * y_p * sqrt(x_p * x_p + y_p * y_p - ee * ee));
-			double cos_value1 = (1 / ((x_p * x_p) + (y_p * y_p))) * (-ee * y_p + gamma1 * x_p * sqrt(x_p * x_p + y_p * y_p - ee * ee));
-			fi1[i] = asin(sin_value1) * 180.0 / M_PI;
-			//5,6
-			double sin_value5 = cos_value_teta * (sin_value_fi * cos_value1 - cos_value_fi * sin_value1);
-			double cos_value5 = gamma3 * sqrt(1 - sin_value5 * sin_value5);
-			fi5[i] = asin(sin_value5) * 180.0 / M_PI;
-			//7
-			double sin_value234 = sin_value_teta / cos_value5;
-			double cos_value234 = cos_value_teta / cos_value5 * (cos_value_fi * cos_value1 + sin_value_fi * sin_value1);
-			double fi234_r = asin(sin_value234);
-			double fi234 = fi234_r * 180.0 / M_PI;
-			//8
-			double x_r = x_p - L4 * cos_value1 * cos_value234;
-			double y_r = y_p - L4 * sin_value1 * cos_value234;
-			double z_r = z_p - L4 * sin_value234;
-			//9
-			double a = -L1 + gamma1 * sqrt(x_r * x_r + y_r * y_r - ee * ee);
-			double b = (1 / (2 * L2)) * (a * a + z_r * z_r + L2 * L2 - L3 * L3);
-			//10,11
-			double sin_value2 = (1 / (a * a + z_r * z_r)) * (z_r * b + gamma2 * a * sqrt(a * a + z_r * z_r - b * b));
-			double cos_value2 = (1 / (a * a + z_r * z_r)) * (a * b - gamma2 * z_r * sqrt(a * a + z_r * z_r - b * b));
-			fi2[i] = asin(sin_value2) * 180.0 / M_PI;
-			//12
-			double sin_value3 = (gamma2 / L3) * sqrt(a * a + z_r * z_r - b * b);
-			double cos_value3 = (b - L2) / L3;
-			fi3[i] = asin(sin_value3) * 180.0 / M_PI;
-			//13
-			double sin_value23 = (1 / L3) * (z_r - (L2 / (a * a + z_r * z_r) * (z_r * b + gamma2 * a * sqrt(a * a + z_r * z_r - b * b))));
-			double cos_value23 = (1 / L3) * (a - ((L2 / (a * a + z_r * z_r)) * (a * b - gamma2 * z_r * sqrt(a * a + z_r * z_r - b * b))));
-			double fi23_r = asin(sin_value23);
-			double fi23 = fi23_r * 180.0 / M_PI;
-			//14
-			double sin_value4 = sin_value234 * cos_value23 - cos_value234 * sin_value23;
-			double cos_value4 = cos_value234 * cos_value23 + sin_value234 * sin_value23;
-			fi4[i] = asin(sin_value4) * 180.0 / M_PI;
-
-
-			//Punkt1
-			x1 = L1 * cos_value1;
-			y1 = L1 * sin_value1;
-			z1 = 0;
-
-			//point01
-			pose[i].x.p01 = x1 + d * sin_value1;
-			pose[i].y.p01 = y1 - d * cos_value1;
-			pose[i].z.p01 = 0;
-
-			if (isnan(pose[i].x.p01) || isnan(pose[i].y.p01) || isnan(pose[i].z.p01)) {
-				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				break;
-			};
-
-			//point02
-			pose[i].x.p02 = pose[i].x.p01 + L2 * cos_value2 * cos_value1;
-			pose[i].y.p02 = pose[i].y.p01 + L2 * cos_value2 * sin_value1;
-			pose[i].z.p02 = L2 * sin_value2;
-
-			if (isnan(pose[i].x.p02) || isnan(pose[i].y.p02) || isnan(pose[i].z.p02)) {
-				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				break;
-			};
-
-			//point0_2
-			pose[i].x.p0_2 = pose[i].x.p02 - (d - ee) * sin_value1;
-			pose[i].y.p0_2 = pose[i].y.p02 + (d - ee) * cos_value1;
-			pose[i].z.p0_2 = pose[i].z.p02;
-
-			if (isnan(pose[i].x.p0_2) || isnan(pose[i].y.p0_2) || isnan(pose[i].z.p0_2)) {
-				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				break;
-			};
-
-			//point02
-			pose[i].x.p_r = pose[i].x.p0_2 + L3 * cos_value1 * cos_value23;
-			pose[i].y.p_r = pose[i].y.p0_2 + L3 * sin_value1 * cos_value23;
-			pose[i].z.p_r = pose[i].z.p0_2 + L3 * sin_value23;
-
-			if (isnan(pose[i].x.p_r) || isnan(pose[i].y.p_r) || isnan(pose[i].z.p_r)) {
-				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				break;
-			};
-
-			//point_p
-			pose[i].x.p_p = pose[i].x.p_r + L4 * cos_value1 * cos_value234;
-			pose[i].y.p_p = pose[i].y.p_r + L4 * sin_value1 * cos_value234;
-			pose[i].z.p_p = pose[i].z.p_r + L4 * sin_value234;
-
-			if (isnan(pose[i].x.p_p) || isnan(pose[i].y.p_p) || isnan(pose[i].z.p_p)) {
-				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				break;
-			};
-
-			//pointp
-			pose[i].x.p_t = pose[i].x.p_p + L * cos_value_teta * cos_value_fi;
-			pose[i].y.p_t = pose[i].y.p_p + L * cos_value_teta * sin_value_fi;
-			pose[i].z.p_t = pose[i].z.p_p + L * sin_value_fi;
-
-			if (isnan(pose[i].x.p_t) || isnan(pose[i].y.p_t) || isnan(pose[i].z.p_t)) {
-				MessageBox::Show("Error with calculations", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				break;
-			};
-		};
 
 		////Displaying TCP value
-		String^ xt = System::Convert::ToString(pose[current_step].x.p_t);
+		String^ xt = System::Convert::ToString(pose.x.p_t);
 		this->xT->Text = xt;
-		String^ yt = System::Convert::ToString(pose[current_step].y.p_t);
+		String^ yt = System::Convert::ToString(pose.y.p_t);
 		this->yT->Text = yt;
-		String^ zt = System::Convert::ToString(pose[current_step].z.p_t);
+		String^ zt = System::Convert::ToString(pose.z.p_t);
 		this->zT->Text = zt;
 
 		//Displaying Machine coordinates
-		String^ phi1 = System::Convert::ToString(fi1[current_step]);
+		String^ phi1 = System::Convert::ToString(fi1);
 		machine_fi1->Text = phi1;
-		String^ phi2 = System::Convert::ToString(fi2[current_step]);
+		String^ phi2 = System::Convert::ToString(fi2);
 		machine_fi2->Text = phi2;
-		String^ phi3 = System::Convert::ToString(fi3[current_step]);
+		String^ phi3 = System::Convert::ToString(fi3);
 		machine_fi3->Text = phi3;
-		String^ phi4 = System::Convert::ToString(fi4[current_step]);
+		String^ phi4 = System::Convert::ToString(fi4);
 		machine_fi4->Text = phi4;
-		String^ phi5 = System::Convert::ToString(fi5[current_step]);
+		String^ phi5 = System::Convert::ToString(fi5);
 		machine_fi5->Text = phi5;
 
 		//Wykres XY/////////////////////////////////////////////////////////////////////
@@ -1482,12 +1278,12 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 		// ustaw zakre osi
 		chart1->ChartAreas[0]->AxisX->Title = "X";
 		chart1->ChartAreas[0]->AxisY->Title = "Y";
-		chart1->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L)/2;
-		chart1->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L)/2;
-		chart1->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L)/2;
-		chart1->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L)/2;
-		chart1->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 4;
-		chart1->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 4;
+		chart1->ChartAreas[0]->AxisX->Minimum = -(calculation.get_plot_range())/2;
+		chart1->ChartAreas[0]->AxisX->Maximum = (calculation.get_plot_range())/2;
+		chart1->ChartAreas[0]->AxisY->Minimum = -(calculation.get_plot_range())/2;
+		chart1->ChartAreas[0]->AxisY->Maximum = (calculation.get_plot_range())/2;
+		chart1->ChartAreas[0]->AxisX->Interval = (calculation.get_plot_range()) / 4;
+		chart1->ChartAreas[0]->AxisY->Interval = (calculation.get_plot_range()) / 4;
 
 		// ustaw marginesy wyświetlania
 		chart1->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1503,35 +1299,35 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 		//dodawanie ramion
 		//ramie 1
 		chart1->Series["Series1"]->Points->AddXY(x1, y1);
-		chart1->Series["Series1"]->Points->AddXY(pose[current_step].x.p01, pose[current_step].y.p01);
+		chart1->Series["Series1"]->Points->AddXY(pose.x.p01, pose.y.p01);
 		//ramie 2
-		chart1->Series["Series2"]->Points->AddXY(pose[current_step].x.p01, pose[current_step].y.p01);
-		chart1->Series["Series2"]->Points->AddXY(pose[current_step].x.p02, pose[current_step].y.p02);
+		chart1->Series["Series2"]->Points->AddXY(pose.x.p01, pose.y.p01);
+		chart1->Series["Series2"]->Points->AddXY(pose.x.p02, pose.y.p02);
 		//ramie 3
-		chart1->Series["Series3"]->Points->AddXY(pose[current_step].x.p02, pose[current_step].y.p02);
-		chart1->Series["Series3"]->Points->AddXY(pose[current_step].x.p0_2, pose[current_step].y.p0_2);
+		chart1->Series["Series3"]->Points->AddXY(pose.x.p02, pose.y.p02);
+		chart1->Series["Series3"]->Points->AddXY(pose.x.p0_2, pose.y.p0_2);
 		//ramie 4
-		chart1->Series["Series4"]->Points->AddXY(pose[current_step].x.p0_2, pose[current_step].y.p0_2);
-		chart1->Series["Series4"]->Points->AddXY(pose[current_step].x.p_r, pose[current_step].y.p_r);
+		chart1->Series["Series4"]->Points->AddXY(pose.x.p0_2, pose.y.p0_2);
+		chart1->Series["Series4"]->Points->AddXY(pose.x.p_r, pose.y.p_r);
 		//ramie 5
-		chart1->Series["Series5"]->Points->AddXY(pose[current_step].x.p_r, pose[current_step].y.p_r);
-		chart1->Series["Series5"]->Points->AddXY(pose[current_step].x.p_p, pose[current_step].y.p_p);
+		chart1->Series["Series5"]->Points->AddXY(pose.x.p_r, pose.y.p_r);
+		chart1->Series["Series5"]->Points->AddXY(pose.x.p_p, pose.y.p_p);
 		//ramie 6
-		chart1->Series["Series6"]->Points->AddXY(pose[current_step].x.p_p, pose[current_step].y.p_p);
-		chart1->Series["Series6"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].y.p_t);
-		chart1->Series["Series7"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].y.p_t);
+		chart1->Series["Series6"]->Points->AddXY(pose.x.p_p, pose.y.p_p);
+		chart1->Series["Series6"]->Points->AddXY(pose.x.p_t, pose.y.p_t);
+		chart1->Series["Series7"]->Points->AddXY(pose.x.p_t, pose.y.p_t);
 
 		//Wykres XZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
 		// ustaw zakre osi
 		chart2->ChartAreas[0]->AxisX->Title = "X";
 		chart2->ChartAreas[0]->AxisY->Title = "Z";
-		chart2->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L)/2;
-		chart2->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L)/2;
-		chart2->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L)/2;
-		chart2->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L)/2;
-		chart2->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 4;
-		chart2->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 4;
+		chart2->ChartAreas[0]->AxisX->Minimum = -(calculation.get_plot_range())/2;
+		chart2->ChartAreas[0]->AxisX->Maximum = (calculation.get_plot_range())/2;
+		chart2->ChartAreas[0]->AxisY->Minimum = -(calculation.get_plot_range())/2;
+		chart2->ChartAreas[0]->AxisY->Maximum = (calculation.get_plot_range())/2;
+		chart2->ChartAreas[0]->AxisX->Interval = (calculation.get_plot_range()) / 4;
+		chart2->ChartAreas[0]->AxisY->Interval = (calculation.get_plot_range()) / 4;
 
 		// ustaw marginesy wyświetlania
 		chart2->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1547,35 +1343,35 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 		//dodawanie ramion
 		//ramie 1
 		chart2->Series["Series1"]->Points->AddXY(x1, z1);
-		chart2->Series["Series1"]->Points->AddXY(pose[current_step].x.p01, pose[current_step].z.p01);
+		chart2->Series["Series1"]->Points->AddXY(pose.x.p01, pose.z.p01);
 		//ramie 2
-		chart2->Series["Series2"]->Points->AddXY(pose[current_step].x.p01, pose[current_step].z.p01);
-		chart2->Series["Series2"]->Points->AddXY(pose[current_step].x.p02, pose[current_step].z.p02);
+		chart2->Series["Series2"]->Points->AddXY(pose.x.p01, pose.z.p01);
+		chart2->Series["Series2"]->Points->AddXY(pose.x.p02, pose.z.p02);
 		//ramie 3
-		chart2->Series["Series3"]->Points->AddXY(pose[current_step].x.p02, pose[current_step].z.p02);
-		chart2->Series["Series3"]->Points->AddXY(pose[current_step].x.p0_2, pose[current_step].z.p0_2);
+		chart2->Series["Series3"]->Points->AddXY(pose.x.p02, pose.z.p02);
+		chart2->Series["Series3"]->Points->AddXY(pose.x.p0_2, pose.z.p0_2);
 		//ramie 4
-		chart2->Series["Series4"]->Points->AddXY(pose[current_step].x.p0_2, pose[current_step].z.p0_2);
-		chart2->Series["Series4"]->Points->AddXY(pose[current_step].x.p_r, pose[current_step].z.p_r);
+		chart2->Series["Series4"]->Points->AddXY(pose.x.p0_2, pose.z.p0_2);
+		chart2->Series["Series4"]->Points->AddXY(pose.x.p_r, pose.z.p_r);
 		//ramie 5
-		chart2->Series["Series5"]->Points->AddXY(pose[current_step].x.p_r, pose[current_step].z.p_r);
-		chart2->Series["Series5"]->Points->AddXY(pose[current_step].x.p_p, pose[current_step].z.p_p);
+		chart2->Series["Series5"]->Points->AddXY(pose.x.p_r, pose.z.p_r);
+		chart2->Series["Series5"]->Points->AddXY(pose.x.p_p, pose.z.p_p);
 		//ramie 6
-		chart2->Series["Series6"]->Points->AddXY(pose[current_step].x.p_p, pose[current_step].z.p_p);
-		chart2->Series["Series6"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
-		chart2->Series["Series7"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
+		chart2->Series["Series6"]->Points->AddXY(pose.x.p_p, pose.z.p_p);
+		chart2->Series["Series6"]->Points->AddXY(pose.x.p_t, pose.z.p_t);
+		chart2->Series["Series7"]->Points->AddXY(pose.x.p_t, pose.z.p_t);
 
 		//Wykres YZ/////////////////////////////////////////////////////////////////////
 		// /////////////////////////////////////////////////////////////////////////////
 		// ustaw zakre osi
 		chart3->ChartAreas[0]->AxisX->Title = "Y";
 		chart3->ChartAreas[0]->AxisY->Title = "Z";
-		chart3->ChartAreas[0]->AxisX->Minimum = -(L2 + L3 + L4 + L)/2;
-		chart3->ChartAreas[0]->AxisX->Maximum = (L2 + L3 + L4 + L)/2;
-		chart3->ChartAreas[0]->AxisY->Minimum = -(L2 + L3 + L4 + L)/2;
-		chart3->ChartAreas[0]->AxisY->Maximum = (L2 + L3 + L4 + L)/2;
-		chart3->ChartAreas[0]->AxisX->Interval = (L2 + L3 + L4 + L) / 4;
-		chart3->ChartAreas[0]->AxisY->Interval = (L2 + L3 + L4 + L) / 4;
+		chart3->ChartAreas[0]->AxisX->Minimum = -(calculation.get_plot_range())/2;
+		chart3->ChartAreas[0]->AxisX->Maximum = (calculation.get_plot_range())/2;
+		chart3->ChartAreas[0]->AxisY->Minimum = -(calculation.get_plot_range())/2;
+		chart3->ChartAreas[0]->AxisY->Maximum = (calculation.get_plot_range())/2;
+		chart3->ChartAreas[0]->AxisX->Interval = (calculation.get_plot_range()) / 4;
+		chart3->ChartAreas[0]->AxisY->Interval = (calculation.get_plot_range()) / 4;
 
 		// ustaw marginesy wyświetlania
 		chart3->ChartAreas[0]->InnerPlotPosition->Auto = false;
@@ -1591,52 +1387,60 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 		//dodawanie ramion
 		//ramie 1
 		chart3->Series["Series1"]->Points->AddXY(y1, z1);
-		chart3->Series["Series1"]->Points->AddXY(pose[current_step].y.p01, pose[current_step].z.p01);
+		chart3->Series["Series1"]->Points->AddXY(pose.y.p01, pose.z.p01);
 		//ramie 2
-		chart3->Series["Series2"]->Points->AddXY(pose[current_step].y.p01, pose[current_step].z.p01);
-		chart3->Series["Series2"]->Points->AddXY(pose[current_step].y.p02, pose[current_step].z.p02);
+		chart3->Series["Series2"]->Points->AddXY(pose.y.p01, pose.z.p01);
+		chart3->Series["Series2"]->Points->AddXY(pose.y.p02, pose.z.p02);
 		//ramie 3
-		chart3->Series["Series3"]->Points->AddXY(pose[current_step].y.p02, pose[current_step].z.p02);
-		chart3->Series["Series3"]->Points->AddXY(pose[current_step].y.p0_2, pose[current_step].z.p0_2);
+		chart3->Series["Series3"]->Points->AddXY(pose.y.p02, pose.z.p02);
+		chart3->Series["Series3"]->Points->AddXY(pose.y.p0_2, pose.z.p0_2);
 		//ramie 4
-		chart3->Series["Series4"]->Points->AddXY(pose[current_step].y.p0_2, pose[current_step].z.p0_2);
-		chart3->Series["Series4"]->Points->AddXY(pose[current_step].y.p_r, pose[current_step].z.p_r);
+		chart3->Series["Series4"]->Points->AddXY(pose.y.p0_2, pose.z.p0_2);
+		chart3->Series["Series4"]->Points->AddXY(pose.y.p_r, pose.z.p_r);
 		//ramie 5
-		chart3->Series["Series5"]->Points->AddXY(pose[current_step].y.p_r, pose[current_step].z.p_r);
-		chart3->Series["Series5"]->Points->AddXY(pose[current_step].y.p_p, pose[current_step].z.p_p);
+		chart3->Series["Series5"]->Points->AddXY(pose.y.p_r, pose.z.p_r);
+		chart3->Series["Series5"]->Points->AddXY(pose.y.p_p, pose.z.p_p);
 		//ramie 6
-		chart3->Series["Series6"]->Points->AddXY(pose[current_step].y.p_p, pose[current_step].z.p_p);
-		chart3->Series["Series6"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
-		chart3->Series["Series7"]->Points->AddXY(pose[current_step].x.p_t, pose[current_step].z.p_t);
+		chart3->Series["Series6"]->Points->AddXY(pose.y.p_p, pose.z.p_p);
+		chart3->Series["Series6"]->Points->AddXY(pose.x.p_t, pose.z.p_t);
+		chart3->Series["Series7"]->Points->AddXY(pose.x.p_t, pose.z.p_t);
 
 		//chart fi
-		for (int i = 0; i < steps; i++)
+		for (int i = 0; i < calculation.to_int(this->steps->Text); i++)
 		{
-			chart4->Series["fi1"]->Points->AddXY(i, fi1[i]);
-			chart4->Series["fi2"]->Points->AddXY(i, fi2[i]);
-			chart4->Series["fi3"]->Points->AddXY(i, fi3[i]);
-			chart4->Series["fi4"]->Points->AddXY(i, fi4[i]);
-			chart4->Series["fi5"]->Points->AddXY(i, fi5[i]);
+			chart4->Series["fi1"]->Points->AddXY(i, calculation.get_fi1(i));
+			chart4->Series["fi2"]->Points->AddXY(i, calculation.get_fi2(i));
+			chart4->Series["fi3"]->Points->AddXY(i, calculation.get_fi3(i));
+			chart4->Series["fi4"]->Points->AddXY(i, calculation.get_fi4(i));
+			chart4->Series["fi5"]->Points->AddXY(i, calculation.get_fi5(i));
 		};
-
-		delete[] pose;
-		pose = NULL;
-		delete[] fi1;
-		fi1 = NULL;
-		delete[] fi2;
-		fi2 = NULL;
-		delete[] fi3;
-		fi3 = NULL;
-		delete[] fi4;
-		fi4 = NULL;
-		delete[] fi5;
-		fi5 = NULL;
 	}
 
 	private: System::Void next_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		int steps = to_int(this->steps->Text);
-		int current_step = to_int(this->current_step->Text);
+		//TODO Make default contructor
+		Calculations calculation(this->L1->Text,
+			this->L2->Text,
+			this->L3->Text,
+			this->L4->Text,
+			this->L5->Text,
+			this->L6->Text,
+			this->d->Text,
+			this->e->Text,
+			this->teta->Text,
+			this->fi->Text,
+			this->gamma1->Text,
+			this->gamma2->Text,
+			this->gamma3->Text,
+			this->x_start->Text,
+			this->y_start->Text,
+			this->z_start->Text,
+			this->x_end->Text,
+			this->y_end->Text,
+			this->z_end->Text,
+			this->steps->Text,
+			this->current_step->Text);
+		int steps = calculation.to_int(this->steps->Text);
+		int current_step = calculation.to_int(this->current_step->Text);
 
 		if (current_step < steps)
 		{
@@ -1653,9 +1457,30 @@ private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart4;
 	}
 
 	private: System::Void prev_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		int steps = to_int(this->steps->Text);
-		int current_step = to_int(this->current_step->Text);
+		//TODO Make default contructor
+		Calculations calculation(this->L1->Text,
+			this->L2->Text,
+			this->L3->Text,
+			this->L4->Text,
+			this->L5->Text,
+			this->L6->Text,
+			this->d->Text,
+			this->e->Text,
+			this->teta->Text,
+			this->fi->Text,
+			this->gamma1->Text,
+			this->gamma2->Text,
+			this->gamma3->Text,
+			this->x_start->Text,
+			this->y_start->Text,
+			this->z_start->Text,
+			this->x_end->Text,
+			this->y_end->Text,
+			this->z_end->Text,
+			this->steps->Text,
+			this->current_step->Text);
+		int steps = calculation.to_int(this->steps->Text);
+		int current_step = calculation.to_int(this->current_step->Text);
 
 		if (current_step > 0)
 		{
